@@ -2,17 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://plalyy.space/posts/newplace/</loc>
+    <loc>https://plalyy.github.io/posts/newplace/</loc>
     <lastmod>2022-11-10T11:42:25+08:00</lastmod>
   </url><url>
-    <loc>http://plalyy.space/</loc>
+    <loc>https://plalyy.github.io/</loc>
     <lastmod>2022-11-10T11:42:25+08:00</lastmod>
   </url><url>
-    <loc>http://plalyy.space/posts/</loc>
+    <loc>https://plalyy.github.io/posts/</loc>
     <lastmod>2022-11-10T11:42:25+08:00</lastmod>
   </url><url>
-    <loc>http://plalyy.space/categories/</loc>
+    <loc>https://plalyy.github.io/categories/</loc>
   </url><url>
-    <loc>http://plalyy.space/tags/</loc>
+    <loc>https://plalyy.github.io/tags/</loc>
   </url>
 </urlset>
