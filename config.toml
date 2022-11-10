@@ -1,0 +1,4 @@
+baseURL = 'http://plalyy.space/'
+languageCode = 'en-us'
+title = 'Plalyy Space'
+theme = "plalyy-paper"
