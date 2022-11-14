@@ -1,5 +1,38 @@
 baseURL = 'https://plalyy.github.io/'
 languageCode = 'en-us'
-title = 'Plalyy Space'
+title = 'Space'
 theme = "plalyy-paper"
 publishDir = 'docs'
+github = 'Plalyy'
+name = 'Plalyy'
+
+[params]
+  color = 'linen'
+
+  github = 'Plalyy'
+
+  avatar = 'nanxiaobei@gmail.com'
+  name = 'Plalyy'
+  bio = 'Discover fresh context'
+
+[menu]
+  [[menu.main]]
+    identifier = "Home"
+    name = "Home"
+    url = "/"
+    weight = 10
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 10
+  [[menu.main]]
+    identifier = "contact"
+    name = "Contact"
+    url = "/contact/"
+    weight = 10
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
