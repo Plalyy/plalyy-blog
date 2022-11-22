@@ -30,5 +30,7 @@ jobs:
       - name: Deploy Web
         uses: peaceiris/actions-gh-pages@v3
         with:
+          PERSONAL_TOKEN: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          EXTERNAL_REPOSITORY: Plalyy/plalyy.github.io
           PUBLISH_BRANCH: master
           commit_message: ${{ github.event.head_commit.message }}
