@@ -25,13 +25,13 @@ jobs:
           hugo-version: "latest"
 
       - name: Build Web
-        run: hugo
+        run: hugo -D
 
       - name: Deploy Web
         uses: peaceiris/actions-gh-pages@v3
         with:
           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           EXTERNAL_REPOSITORY: Plalyy/plalyy.github.io
-          PUBLISH_BRANCH: test
+          PUBLISH_BRANCH: master
           PUBLISH_DIR: .
           commit_message: ${{ github.event.head_commit.message }}
