@@ -12,6 +12,8 @@
     "version": "5.4.2"
   },
   "dependencies": {
+    "@octokit/rest": "^19.0.7",
+    "fs-extra": "^11.1.0",
     "hexo": "^5.0.0",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-category": "^1.0.0",
@@ -21,6 +23,8 @@
     "hexo-renderer-marked": "^6.0.0",
     "hexo-renderer-stylus": "^2.0.0",
     "hexo-server": "^2.0.0",
-    "hexo-theme-landscape": "^0.0.3"
+    "hexo-theme-landscape": "^0.0.3",
+    "luxon": "^3.2.1",
+    "path": "^0.12.7"
   }
 }
