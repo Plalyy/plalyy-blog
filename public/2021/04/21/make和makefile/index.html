@@ -16,21 +16,21 @@
   <meta name="author" content="Plalyy">
   <meta name="keywords" content="">
   
-    <meta name="description" content="关于我，好像暂时没什么可说">
-<meta property="og:type" content="website">
-<meta property="og:title" content="关于">
-<meta property="og:url" content="http://plalyy.github.io/about/index.html">
+    <meta name="description" content="Make和MakefileMake，一般指GNU Make，用于完成自动化编译的工具。Makefile文件为Make指明编译规则。 Makefile描述整个工程的编译链接规则，基本规则为： 123TARGET...: DEPENDENCIES...	COMMAND	...   TARGET：目标程序产生文件，如可执行文件、目标文件。目标也可以是clean等要执行的动作。 DEPENDENCIES：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Make和Makefile">
+<meta property="og:url" content="http://plalyy.github.io/2021/04/21/make%E5%92%8Cmakefile/index.html">
 <meta property="og:site_name" content="A small place">
-<meta property="og:description" content="关于我，好像暂时没什么可说">
+<meta property="og:description" content="Make和MakefileMake，一般指GNU Make，用于完成自动化编译的工具。Makefile文件为Make指明编译规则。 Makefile描述整个工程的编译链接规则，基本规则为： 123TARGET...: DEPENDENCIES...	COMMAND	...   TARGET：目标程序产生文件，如可执行文件、目标文件。目标也可以是clean等要执行的动作。 DEPENDENCIES：">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-02-28T18:56:26.939Z">
-<meta property="article:modified_time" content="2023-02-28T18:56:26.939Z">
+<meta property="article:published_time" content="2021-04-20T16:12:00.000Z">
+<meta property="article:modified_time" content="2023-02-28T18:55:08.454Z">
 <meta property="article:author" content="Plalyy">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>关于 - A small place</title>
+  <title>Make和Makefile - A small place</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -90,7 +90,7 @@
   <header>
     
 
-<div class="header-inner" style="height: 60vh;">
+<div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -196,9 +196,49 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="关于"></span>
+            <span id="subtitle" data-typed-text="Make和Makefile"></span>
           
         </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-04-21 00:12" pubdate>
+          2021年4月21日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          663 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          6 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
 
         
       </div>
@@ -214,50 +254,170 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div id="board"
-          >
-          
-            <div class="about-avatar">
-              <img src="/img/avatar.png" srcset="/img/loading.gif" lazyload class="img-fluid" alt="avatar">
-            </div>
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
+      
 
-<div class="text-center">
-  <div class="about-info">
-    <div class="about-name">Plalyy</div>
-    <div class="about-intro"></div>
-    <div class="about-icons">
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
       
-        
-        
-        
-        <a href=https://https://github.com/Plalyy class="
-           hint--bottom hint--rounded"
-           aria-label=GitHub
-           target="_blank"
-        >
-          <i class="iconfont icon-github-fill" aria-hidden="true"></i>
-          
-        </a>
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Make和Makefile</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="Make和Makefile"><a href="#Make和Makefile" class="headerlink" title="Make和Makefile"></a>Make和Makefile</h2><p>Make，一般指GNU Make，用于完成自动化编译的工具。Makefile文件为Make指明编译规则。</p>
+<p>Makefile描述整个工程的编译链接规则，基本规则为：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">TARGET...: DEPENDENCIES...</span><br>	COMMAND<br>	...<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>TARGET：目标程序产生文件，如可执行文件、目标文件。目标也可以是clean等要执行的动作。</li>
+<li>DEPENDENCIES：用来产生目标的输入文件列表，一个目标常依赖多个文件。</li>
+<li>COMMAND：shell命令或shell下执行的程序，make执行的动作，每个命令行起始字符必须为TAB。</li>
+</ul>
+<p>如果DEPENDENCIES中有文件更新，COMMAND就会执行。make命令回味每个TAB开始的命令创建一个Shell进程去执行。</p>
+<h2 id="DEMO"><a href="#DEMO" class="headerlink" title="DEMO"></a>DEMO</h2><p>目前有三个文件main.c、A.c、B.c，main依赖A和B。</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">main: main.o A.o B.o</span><br>	gcc -o main main.o A.o B.o<br><span class="hljs-section">main.o: main.c</span><br>	gcc -c main.c<br><span class="hljs-section">A.o: A.c</span><br>	gcc -c A.c<br><span class="hljs-section">B.o: B.c</span><br>	gcc -c B.c<br><span class="hljs-section">clean:</span><br>	rm *.o<br>	rm main<br></code></pre></td></tr></table></figure>
+
+<p>首先使用make，此后若更改了A.c或B.c，重新执行make时会检查最后更改时间，只重新编译更改的文件。make clean清空编译文件。</p>
+<h2 id="Makefile变量"><a href="#Makefile变量" class="headerlink" title="Makefile变量"></a>Makefile变量</h2><h2 id="Makefile伪目标"><a href="#Makefile伪目标" class="headerlink" title="Makefile伪目标"></a>Makefile伪目标</h2><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] make工具和Makefile的使用： <a target="_blank" rel="noopener" href="https://blog.csdn.net/FRS2023/article/details/120839849">https://blog.csdn.net/FRS2023/article/details/120839849</a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
       
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF/" class="category-chain-item">技术</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Make和Makefile</div>
+      <div>http://plalyy.github.io/2021/04/21/make和makefile/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Plalyy</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2021年4月21日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/07/23/%E7%94%B5%E5%BD%B1%E4%B8%8E%E4%B9%A6/" title="电影与书">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">电影与书</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/04/21/C++%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/" title="C/C++编译过程">
+                        <span class="hidden-mobile">C/C++编译过程</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
     </div>
   </div>
 </div>
 
-<article class="about-content page-content mt-5">
-  <div class="markdown-body">
-    <p>关于我，好像暂时没什么可说</p>
-
-  </div>
-
-  
-</article>
-
 
 
 
@@ -284,11 +444,8 @@
 
 
 
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
+
     
 
     
@@ -392,6 +549,46 @@
   
 
 
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
 
 
   <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
