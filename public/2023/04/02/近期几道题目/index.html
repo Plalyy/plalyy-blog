@@ -23,8 +23,8 @@
 <meta property="og:site_name" content="A small place">
 <meta property="og:description" content="感想好久没做题了，思维和实现能力很明显的下滑，最大的问题是不太会思考了，需要多做一些防止痴呆。 EOJ 图森未来杯比赛地址：EOJ I. 宝箱有n个红宝箱和n个蓝宝箱，需要在每个宝箱中放不同正整数的金币，且同颜色宝箱 a[i] &gt; a[i-1]，求宝箱最大金币数的最小值 这道题目尝试DP未解出，是因为下意识将同一位置捆绑了，感觉有若干限制很难找到最优子问题。但DP的本质是什么呢？按自己现在的">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-04-02T04:12:00.000Z">
-<meta property="article:modified_time" content="2023-04-02T10:05:14.728Z">
+<meta property="article:published_time" content="2023-04-02T10:12:00.000Z">
+<meta property="article:modified_time" content="2023-04-02T10:33:22.138Z">
 <meta property="article:author" content="Plalyy">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -207,8 +207,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-04-02 12:12" pubdate>
-          2023年4月2日 中午
+        <time datetime="2023-04-02 18:12" pubdate>
+          2023年4月2日 晚上
         </time>
       </span>
     
@@ -219,7 +219,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.4k 字
+          3k 字
         
       </span>
     
@@ -230,7 +230,7 @@
         
         
         
-          20 分钟
+          26 分钟
         
       </span>
     
@@ -282,7 +282,9 @@
 
 
 
-<h1 id="力扣周赛-双周赛"><a href="#力扣周赛-双周赛" class="headerlink" title="力扣周赛+双周赛"></a>力扣周赛+双周赛</h1><p>最小翻转次数 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/minimum-reverse-operations/">url</a></p>
+<h1 id="力扣周赛-双周赛"><a href="#力扣周赛-双周赛" class="headerlink" title="力扣周赛+双周赛"></a>力扣周赛+双周赛</h1><ol start="6365">
+<li>最少翻转操作数 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/minimum-reverse-operations/">URL</a></li>
+</ol>
 <p>数组 a[]，位置 p 值为1，否则为0。限制是某些位置要求不能为1。现在给定长度 k，问对于每个位置，求执行最少次数翻转长度为 k 子数组使得该位置为 1。</p>
 <p>通过画图可得下标为 i 的 1 翻转区间为 $[i-(k-1), i+(k-1)]$ 的公差为 2 的等差数列，对于越界的情况无法翻转，因此要处理边界情况，因此：左区间  $max(k-i-1, i-(k-1))$，右区间 $min(2*n-k-i-1,i+(k-1))$</p>
 <p>对于最小次数，考虑BFS。因为从数据看直接枚举区间的复杂度 $O(nk)$ 无法接受，考虑 set 维护备选下标，针对公差为 2 的情况使用两个 set 分别维护，不断删除。</p>
@@ -294,6 +296,23 @@
 <li>move方法，将左值强制转化为右值引用，用于移动语义。无内存拷贝等操作，转移对象的状态或所有权？所以这样效率比每次 push_back 要高</li>
 </ol>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">minReverseOperations</span><span class="hljs-params">(<span class="hljs-type">int</span> n, <span class="hljs-type">int</span> p, vector&lt;<span class="hljs-type">int</span>&gt;&amp; banned, <span class="hljs-type">int</span> k)</span> </span>&#123;<br>        set&lt;<span class="hljs-type">int</span>&gt; s[<span class="hljs-number">2</span>];<br>        unordered_set&lt;<span class="hljs-type">int</span>&gt; ban&#123;banned.<span class="hljs-built_in">begin</span>(), banned.<span class="hljs-built_in">end</span>()&#125;;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++) &#123;<br>            <span class="hljs-keyword">if</span>(i!=p&amp;&amp;!ban.<span class="hljs-built_in">count</span>(i)) &#123;<br>                s[i&amp;<span class="hljs-number">1</span>].<span class="hljs-built_in">insert</span>(i);<br>            &#125;<br>        &#125;<br>        s[<span class="hljs-number">0</span>].<span class="hljs-built_in">insert</span>(n);<br>        s[<span class="hljs-number">1</span>].<span class="hljs-built_in">insert</span>(n);<br><br>        <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">ans</span><span class="hljs-params">(n, <span class="hljs-number">-1</span>)</span></span>;<br>        vector&lt;<span class="hljs-type">int</span>&gt; que&#123;p&#125;;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> steps=<span class="hljs-number">0</span>; que.<span class="hljs-built_in">size</span>(); steps++) &#123;<br>            vector&lt;<span class="hljs-type">int</span>&gt; tmp;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i: que) &#123;<br>                ans[i]=steps;<br>                <span class="hljs-type">int</span> mn=<span class="hljs-built_in">max</span>(k-i<span class="hljs-number">-1</span>,i-k+<span class="hljs-number">1</span>);<br>                <span class="hljs-type">int</span> mx=<span class="hljs-built_in">min</span>(<span class="hljs-number">2</span>*n-k-i<span class="hljs-number">-1</span>,i+k<span class="hljs-number">-1</span>);<br>                set&lt;<span class="hljs-type">int</span>&gt;&amp; ss=s[mn&amp;<span class="hljs-number">1</span>];<br>                <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> it=ss.<span class="hljs-built_in">lower_bound</span>(mn); *it&lt;=mx; it=ss.<span class="hljs-built_in">erase</span>(it)) &#123;<br>                    tmp.<span class="hljs-built_in">push_back</span>(*it);<br>                &#125;<br>            &#125;<br>            que = <span class="hljs-built_in">move</span>(tmp);<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+
+
+<ol start="6329">
+<li>使子数组元素和相等 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/make-k-subarray-sums-equal/">URL</a></li>
+</ol>
+<p>循环数组 arr，求最小修改某个元素+1或-1的次数，使得任意长度为 k 的子数组元素总和相等</p>
+<p>可以根据长度为 k 的窗口推移得知 $a[i]&#x3D;a[i+k]&#x3D;a[i+2*k]&#x3D;…$ 循环周期为 k</p>
+<p>另外对于循环数组，因此天然周期为 n (数组长度)</p>
+<p>刚得知循环数组既有周期 n 又有周期 k，因此必然有周期 $gcd(n,k)$ 即 $a[i]&#x3D;a[i+nx+ky]&#x3D;a[i+gcd(n,k)]$ </p>
+<p>因此按周期分区间，然后使得同类数字最小次数相同，即取中位数</p>
+<p>学到了：</p>
+<ol>
+<li>两个周期可以 gcd，那三个周期？TODO</li>
+<li>nth_element() 方法</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">long</span> <span class="hljs-type">long</span> <span class="hljs-title">makeSubKSumEqual</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt; &amp;arr, <span class="hljs-type">int</span> k)</span> </span>&#123;<br>        <span class="hljs-type">int</span> n = arr.<span class="hljs-built_in">size</span>();<br>        k = <span class="hljs-built_in">gcd</span>(k, n);<br>        vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; <span class="hljs-built_in">g</span>(k);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i)<br>            g[i % k].<span class="hljs-built_in">push_back</span>(arr[i]);<br><br>        <span class="hljs-type">long</span> <span class="hljs-type">long</span> ans = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> &amp;b: g) &#123;<br>            <span class="hljs-built_in">nth_element</span>(b.<span class="hljs-built_in">begin</span>(), b.<span class="hljs-built_in">begin</span>() + b.<span class="hljs-built_in">size</span>() / <span class="hljs-number">2</span>, b.<span class="hljs-built_in">end</span>());<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> x: b)<br>                ans += <span class="hljs-built_in">abs</span>(x - b[b.<span class="hljs-built_in">size</span>() / <span class="hljs-number">2</span>]);<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
 
 
                 
