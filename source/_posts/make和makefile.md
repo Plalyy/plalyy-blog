@@ -4,6 +4,10 @@ date: 2021-04-21 00:12
 category: 技术
 ---
 
+同样是本科毕设需要，学一下Make
+
+<!--more-->
+
 ## Make和Makefile
 
 Make，一般指GNU Make，用于完成自动化编译的工具。Makefile文件为Make指明编译规则。

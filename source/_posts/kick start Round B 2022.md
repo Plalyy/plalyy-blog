@@ -4,11 +4,11 @@ date: 2022-04-23 14:30
 category: 技术
 ---
 
-
-<!--markdown-->
-[kick start链接](https://codingcompetitions.withgoogle.com/kickstart/round/00000000008caa74)
-
 前几天邮箱收到kick start的通知，想着自己从没正式参与过，看能不能过了这轮就打算参加。后面才发现把kick start和code jam弄混了。
+
+<!--more-->
+
+[kick start链接](https://codingcompetitions.withgoogle.com/kickstart/round/00000000008caa74)
 
 所幸排名还比较好，但也暴露了许多问题的。
 
