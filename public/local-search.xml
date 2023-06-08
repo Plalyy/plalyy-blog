@@ -4,16 +4,16 @@
   
   
   <entry>
-    <title>Golang</title>
-    <link href="/2023/06/07/Golang/"/>
-    <url>/2023/06/07/Golang/</url>
+    <title>每一天都是最后一天</title>
+    <link href="/2023/06/08/%E6%AF%8F%E4%B8%80%E5%A4%A9%E9%83%BD%E6%98%AF%E6%9C%80%E5%90%8E%E4%B8%80%E5%A4%A9/"/>
+    <url>/2023/06/08/%E6%AF%8F%E4%B8%80%E5%A4%A9%E9%83%BD%E6%98%AF%E6%9C%80%E5%90%8E%E4%B8%80%E5%A4%A9/</url>
     
-    <content type="html"><![CDATA[<p>Go 学习</p><span id="more"></span><ol><li>GMP 模型</li></ol><p>推荐文章：<a href="http://go.cyub.vip/gmp/gmp-model.html">GMP模型</a></p><p>这个文章看一遍就对 GMP 模型了解差不多了，本质是一种混合线程模型(N:M)，很好处理了协程(用户级线程)和系统级线程的关系，既减少上下文切换，又充分利用线程的CPU调度。模型的两个极端分别是用户级线程模型(N:1)和内核级线程模型(1:1)。</p><p>值得看的地方：<br>(1). M(内核级线程)在LRQ和GRQ(RQ: run queue)找不到G时，如何从其他MP偷取G(work stealing)<br>(2). G因系统调用阻塞时，M和P解除关系，P寻找空闲M或新建；G因I&#x2F;O等原因时，不阻塞M而是挂起？这块可以看下源码实现<br>(3). 全局有M0，每个M都G0，分别做了什么事情<br>(4). 数据结构了解</p><ol start="2"><li>Golang 中的设计模式</li></ol><p>整体结构 interface struct method</p><p>链式调用</p><ol start="3"><li><p>Channel 和 Map 的使用</p></li><li><p>锁</p></li></ol>]]></content>
+    <content type="html"><![CDATA[<p>每一天都是最后一天</p><span id="more"></span><p>把每一天当最后一天，很多事情就可以当天果断地说了。比如工作考虑更冷静，比如感情方面更放松。唯一考虑点就是和钟。</p><p>要简单想下<strong>未来能做的方向和可能性</strong>，还有很多想做的事情：</p><ul><li>工作梳理+interview</li><li>CMU15445</li><li>MIT6.824</li><li>看书《人间食粮》</li><li>减重</li></ul><p>有一些未来的事情：</p><ul><li>TiDB Future App Hackathon 2023 <a href="https://mp.weixin.qq.com/s/s8UaL5Orp7CORPRoAZlw8Q">链接</a></li><li>6.18 和光哥哥去杭州</li><li>临走前和朋友们约饭</li><li>和吴迪、杰哥爬山之行</li></ul>]]></content>
     
     
     <categories>
       
-      <category>技术</category>
+      <category>感想等</category>
       
     </categories>
     
@@ -23,16 +23,16 @@
   
   
   <entry>
-    <title>每一天都是最后一天</title>
-    <link href="/2023/06/06/%E6%AF%8F%E4%B8%80%E5%A4%A9%E9%83%BD%E6%98%AF%E6%9C%80%E5%90%8E%E4%B8%80%E5%A4%A9/"/>
-    <url>/2023/06/06/%E6%AF%8F%E4%B8%80%E5%A4%A9%E9%83%BD%E6%98%AF%E6%9C%80%E5%90%8E%E4%B8%80%E5%A4%A9/</url>
+    <title>Golang</title>
+    <link href="/2023/06/07/Golang/"/>
+    <url>/2023/06/07/Golang/</url>
     
-    <content type="html"><![CDATA[<p>每一天都是最后一天</p><span id="more"></span><p>今天事情：1转岗方面，本周leader和bp会简单沟通聊天；2小钟答辩顺利，接下来计划出行和雅思法考，飞乌鲁木齐白天航班坐左边均可看天山山脉；3工作产出未完全完成（晚上继续补完）。空耗了一些时间，但想通了一点事。</p><p>工作方面认真准备沟通，转岗失败最差情况n+1，好像拿到工资和赔偿后去环游中国挺好。最近先投递和面试下不太想去的公司，锻炼经验，也算是拷打自己，避免先在大公司把面评搞坏了。</p><p>感情方面想未来差距很大，工作的不稳定性和不持续性等。这两天聊天我拿不准双方态度，其实两人也没到深感情关系吧。逐渐有个想法就是，把答应的事情尽可能做完，然后就这样啦…那应该得早点和钟沟通这个想法，没必要因为我这事浪费时间和情绪了。我真的到处都在拖累别人，喜欢人后就更不想拖累了。</p><hr><p>今天不在状态，晚上刷脉脉非常焦虑。晚上聊了会儿，心中无限想她会有光明的未来，想不到自己怎么样能跟上，有个思想是不要耽误她了。</p><p>如果今天就是最后的二十四小时。</p>]]></content>
+    <content type="html"><![CDATA[<p>Go 学习</p><span id="more"></span><h1 id="GMP-模型"><a href="#GMP-模型" class="headerlink" title="GMP 模型"></a>GMP 模型</h1><p>推荐文章：<a href="http://go.cyub.vip/gmp/gmp-model.html">GMP模型</a></p><p>这个文章看一遍就对 GMP 模型了解差不多了，本质是一种混合线程模型(N:M)，很好处理了协程(用户级线程)和系统级线程的关系，既减少上下文切换，又充分利用线程的CPU调度。模型的两个极端分别是用户级线程模型(N:1)和内核级线程模型(1:1)。</p><p>值得看的地方：<br>(1). M(内核级线程)在LRQ和GRQ(RQ: run queue)找不到G时，如何从其他MP偷取G(work stealing)<br>(2). G因系统调用阻塞时，M和P解除关系，P寻找空闲M或新建；G因I&#x2F;O等原因时，不阻塞M而是挂起？这块可以看下源码实现<br>(3). 全局有M0，每个M都G0，分别做了什么事情<br>(4). 数据结构了解</p><h1 id="Golang-中的设计模式"><a href="#Golang-中的设计模式" class="headerlink" title="Golang 中的设计模式"></a>Golang 中的设计模式</h1><p>整体结构 interface struct method</p><p>链式调用</p><h1 id="Channel-和-Map-等"><a href="#Channel-和-Map-等" class="headerlink" title="Channel 和 Map 等"></a>Channel 和 Map 等</h1><h1 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h1>]]></content>
     
     
     <categories>
       
-      <category>感想等</category>
+      <category>技术</category>
       
     </categories>
     

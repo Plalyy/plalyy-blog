@@ -8,7 +8,7 @@ Go 学习
 
 <!--more-->
 
-1. GMP 模型
+# GMP 模型
 
 推荐文章：[GMP模型](http://go.cyub.vip/gmp/gmp-model.html)
 
@@ -20,12 +20,12 @@ Go 学习
 (3). 全局有M0，每个M都G0，分别做了什么事情
 (4). 数据结构了解
 
-2. Golang 中的设计模式
+# Golang 中的设计模式
 
 整体结构 interface struct method
 
 链式调用
 
-3. Channel 和 Map 的使用
+# Channel 和 Map 等
 
-4. 锁
+# 锁
