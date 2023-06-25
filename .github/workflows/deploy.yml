@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   workflow_dispatch:
 
 permissions:
@@ -31,12 +31,6 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-
-      - name: Sync posts
-        run: node sync.mjs
-        env:
-          GH_REPO: Plalyy/blog
-          GH_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
 
       - name: Hexo build
         run: npm run build
