@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="zh-CN" data-default-color-scheme=auto>
 
@@ -11,56 +9,57 @@
   <link rel="icon" href="/img/fly.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
+
   <meta name="theme-color" content="#2f4154">
   <meta name="author" content="Plalyy">
   <meta name="keywords" content="">
-  
-    <meta name="description" content="感想好久没做题了，思维和实现能力很明显的下滑，最大的问题是不太会思考了，需要多做一些防止痴呆。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="近期的几道题目">
-<meta property="og:url" content="http://plalyy.github.io/2023/04/02/230402%E8%BF%91%E6%9C%9F%E5%87%A0%E9%81%93%E9%A2%98%E7%9B%AE/index.html">
-<meta property="og:site_name" content="A small place">
-<meta property="og:description" content="感想好久没做题了，思维和实现能力很明显的下滑，最大的问题是不太会思考了，需要多做一些防止痴呆。">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-04-02T10:12:00.000Z">
-<meta property="article:modified_time" content="2023-06-19T08:39:58.728Z">
-<meta property="article:author" content="Plalyy">
-<meta name="twitter:card" content="summary_large_image">
-  
-  
-  
+
+  <meta name="description" content="感想好久没做题了，思维和实现能力很明显的下滑，最大的问题是不太会思考了，需要多做一些防止痴呆。">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="近期的几道题目">
+  <meta property="og:url"
+    content="http://plalyy.github.io/2023/04/02/230402%E8%BF%91%E6%9C%9F%E5%87%A0%E9%81%93%E9%A2%98%E7%9B%AE/index.html">
+  <meta property="og:site_name" content="A small place">
+  <meta property="og:description" content="感想好久没做题了，思维和实现能力很明显的下滑，最大的问题是不太会思考了，需要多做一些防止痴呆。">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="article:published_time" content="2023-04-02T10:12:00.000Z">
+  <meta property="article:modified_time" content="2023-06-19T08:39:58.728Z">
+  <meta property="article:author" content="Plalyy">
+  <meta name="twitter:card" content="summary_large_image">
+
+
+
   <title>近期的几道题目 - A small place</title>
 
-  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
 
-  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
 
-  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+  <link rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
 
-  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
-
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-<!-- Do not modify the link that theme dependent icons -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+  <link rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
 
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+  <!-- 主题依赖的图标库，不要自行修改 -->
+  <!-- Do not modify the link that theme dependent icons -->
+
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
 
 
-<link  rel="stylesheet" href="/css/main.css" />
+
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+  <link rel="stylesheet" href="/css/main.css" />
 
 
   <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
-  
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
-  
+
+  <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+
 
 
 
@@ -68,404 +67,426 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"plalyy.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = { "hostname": "plalyy.github.io", "root": "/", "version": "1.9.4", "typing": { "enable": true, "typeSpeed": 70, "cursorChar": "_", "loop": false, "scope": [] }, "anchorjs": { "enable": true, "element": "h1,h2,h3,h4,h5,h6", "placement": "left", "visible": "hover", "icon": "" }, "progressbar": { "enable": true, "height_px": 3, "color": "#29d", "options": { "showSpinner": false, "trickleSpeed": 100 } }, "code_language": { "enable": true, "default": "TEXT" }, "copy_btn": true, "image_caption": { "enable": true }, "image_zoom": { "enable": true, "img_url_replace": ["", ""] }, "toc": { "enable": true, "placement": "right", "headingSelector": "h1,h2,h3,h4,h5,h6", "collapseDepth": 0 }, "lazyload": { "enable": true, "loading_img": "/img/loading.gif", "onlypost": false, "offset_factor": 2 }, "web_analytics": { "enable": false, "follow_dnt": true, "baidu": null, "google": null, "gtag": null, "tencent": { "sid": null, "cid": null }, "woyaola": null, "cnzz": null, "leancloud": { "app_id": null, "app_key": null, "server_url": null, "path": "window.location.pathname", "ignore_local": false } }, "search_path": "/local-search.xml" };
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
-  
+  <script src="/js/utils.js"></script>
+  <script src="/js/color-schema.js"></script>
 
 
-  
-<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+  <meta name="generator" content="Hexo 5.4.2">
+</head>
 
 
 <body>
-  
+
 
   <header>
-    
 
-<div class="header-inner" style="height: 70vh;">
-  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="/">
-      <strong>Plalyy</strong>
-    </a>
 
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
+    <div class="header-inner" style="height: 70vh;">
+      <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+        <div class="container">
+          <a class="navbar-brand" href="/">
+            <strong>Plalyy</strong>
+          </a>
 
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/">
-                <i class="iconfont icon-home-fill"></i>
-                <span>首页</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/archives/">
-                <i class="iconfont icon-archive-fill"></i>
-                <span>归档</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/categories/">
-                <i class="iconfont icon-category-fill"></i>
-                <span>分类</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                <span>关于</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/links/">
-                <i class="iconfont icon-link-fill"></i>
-                <span>友链</span>
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              <i class="iconfont icon-search"></i>
-            </a>
-          </li>
-          
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
-              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
-            </a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
+          <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <div class="animated-icon"><span></span><span></span><span></span></div>
+          </button>
 
-  
+          <!-- Collapsible content -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto text-center">
 
-<div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
-  <div class="full-bg-img">
-    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-      <div class="banner-text text-center fade-in-up">
-        <div class="h2">
-          
-            <span id="subtitle" data-typed-text="近期的几道题目"></span>
-          
+
+
+
+
+              <li class="nav-item">
+                <a class="nav-link" href="/">
+                  <i class="iconfont icon-home-fill"></i>
+                  <span>首页</span>
+                </a>
+              </li>
+
+
+
+
+
+
+              <li class="nav-item">
+                <a class="nav-link" href="/archives/">
+                  <i class="iconfont icon-archive-fill"></i>
+                  <span>归档</span>
+                </a>
+              </li>
+
+
+
+
+
+
+              <li class="nav-item">
+                <a class="nav-link" href="/categories/">
+                  <i class="iconfont icon-category-fill"></i>
+                  <span>分类</span>
+                </a>
+              </li>
+
+
+
+
+
+
+              <li class="nav-item">
+                <a class="nav-link" href="/about/">
+                  <i class="iconfont icon-user-fill"></i>
+                  <span>关于</span>
+                </a>
+              </li>
+
+
+
+
+
+
+              <li class="nav-item">
+                <a class="nav-link" href="/links/">
+                  <i class="iconfont icon-link-fill"></i>
+                  <span>友链</span>
+                </a>
+              </li>
+
+
+
+              <li class="nav-item" id="search-btn">
+                <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch"
+                  aria-label="Search">
+                  <i class="iconfont icon-search"></i>
+                </a>
+              </li>
+
+
+
+              <li class="nav-item" id="color-toggle-btn">
+                <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+                  <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+                </a>
+              </li>
+
+            </ul>
+          </div>
         </div>
-
-        
-          
-  <div class="mt-3">
-    
-    
-      <span class="post-meta">
-        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-04-02 18:12" pubdate>
-          2023年4月2日 晚上
-        </time>
-      </span>
-    
-  </div>
-
-  <div class="mt-1">
-    
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-chart"></i>
-        
-          3k 字
-        
-      </span>
-    
-
-    
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-clock-fill"></i>
-        
-        
-        
-          26 分钟
-        
-      </span>
-    
-
-    
-    
-  </div>
+      </nav>
 
 
-        
+
+      <div id="banner" class="banner" parallax=true
+        style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+        <div class="full-bg-img">
+          <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+            <div class="banner-text text-center fade-in-up">
+              <div class="h2">
+
+                <span id="subtitle" data-typed-text="近期的几道题目"></span>
+
+              </div>
+
+
+
+              <div class="mt-3">
+
+
+                <span class="post-meta">
+                  <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+                  <time datetime="2023-04-02 18:12" pubdate>
+                    2023年4月2日 晚上
+                  </time>
+                </span>
+
+              </div>
+
+              <div class="mt-1">
+
+                <span class="post-meta mr-2">
+                  <i class="iconfont icon-chart"></i>
+
+                  3k 字
+
+                </span>
+
+
+
+                <span class="post-meta mr-2">
+                  <i class="iconfont icon-clock-fill"></i>
+
+
+
+                  26 分钟
+
+                </span>
+
+
+
+
+              </div>
+
+
+
+            </div>
+
+
+          </div>
+        </div>
       </div>
 
-      
     </div>
-  </div>
-</div>
-
-</div>
 
   </header>
 
   <main>
-    
-      
-
-<div class="container-fluid nopadding-x">
-  <div class="row nomargin-x">
-    <div class="side-col d-none d-lg-block col-lg-2">
-      
-
-    </div>
-
-    <div class="col-lg-8 nopadding-x-md">
-      <div class="container nopadding-x-md" id="board-ctn">
-        <div id="board">
-          <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">近期的几道题目</h1>
-            
-            
-              <div class="markdown-body">
-                
-                <h1 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h1><p>好久没做题了，思维和实现能力很明显的下滑，最大的问题是不太会思考了，需要多做一些防止痴呆。</p>
-<span id="more"></span>
-<h1 id="EOJ-图森未来杯"><a href="#EOJ-图森未来杯" class="headerlink" title="EOJ 图森未来杯"></a>EOJ 图森未来杯</h1><p>比赛地址：<a target="_blank" rel="noopener" href="https://acm.ecnu.edu.cn/contest/621/">EOJ</a></p>
-<p>I. 宝箱<br>有n个红宝箱和n个蓝宝箱，需要在每个宝箱中放不同正整数的金币，且同颜色宝箱 a[i] &gt; a[i-1]，求宝箱最大金币数的最小值</p>
-<p>这道题目尝试DP未解出，是因为下意识将同一位置捆绑了，感觉有若干限制很难找到最优子问题。但DP的本质是什么呢？按自己现在的理解是在解空间寻求最优解向量？这样说不知道对不对。需要在理解层面加深。</p>
-<p>所以这道题可以用 dp[i][j] 表示红 i 蓝 j 后最大金币最小化的值，因此下一个要放的值是 dp[i][j] + 1（若奇偶性满足），否则 dp[i][j] + 2，然后更新状态。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;algorithm&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;vector&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">int</span> a[<span class="hljs-number">1020</span>], b[<span class="hljs-number">1020</span>];<br><span class="hljs-type">int</span> dp[<span class="hljs-number">1020</span>][<span class="hljs-number">1020</span>];<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-type">int</span> n;<br>    cin&gt;&gt;n;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;i++) &#123;<br>        cin&gt;&gt;a[i];<br>    &#125;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;i++) &#123;<br>        cin&gt;&gt;b[i];<br>    &#125;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;=n;i++) &#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">0</span>;j&lt;=n;j++) &#123;<br>            dp[i][j]=<span class="hljs-number">1e9</span>;<br>        &#125;<br>    &#125;<br>    dp[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;=n;i++) &#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">0</span>;j&lt;=n;j++) &#123;<br>            <span class="hljs-type">int</span> v=dp[i][j]+<span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">if</span>(i&lt;n) &#123;<br>                <span class="hljs-keyword">if</span>((a[i+<span class="hljs-number">1</span>]+v)%<span class="hljs-number">2</span>==<span class="hljs-number">0</span>)<br>                    dp[i+<span class="hljs-number">1</span>][j]=<span class="hljs-built_in">min</span>(dp[i+<span class="hljs-number">1</span>][j], dp[i][j]+<span class="hljs-number">1</span>);<br>                <span class="hljs-keyword">else</span> <br>                    dp[i+<span class="hljs-number">1</span>][j]=<span class="hljs-built_in">min</span>(dp[i+<span class="hljs-number">1</span>][j], dp[i][j]+<span class="hljs-number">2</span>);<br>            &#125;<br>            <span class="hljs-keyword">if</span>(j&lt;n) &#123;<br>                <span class="hljs-keyword">if</span>((b[j+<span class="hljs-number">1</span>]+v)%<span class="hljs-number">2</span>==<span class="hljs-number">0</span>) <br>                    dp[i][j+<span class="hljs-number">1</span>]=<span class="hljs-built_in">min</span>(dp[i][j+<span class="hljs-number">1</span>], dp[i][j]+<span class="hljs-number">1</span>);<br>                <span class="hljs-keyword">else</span> <br>                    dp[i][j+<span class="hljs-number">1</span>]=<span class="hljs-built_in">min</span>(dp[i][j+<span class="hljs-number">1</span>], dp[i][j]+<span class="hljs-number">2</span>);<br>            &#125;<br>        &#125;<br>    &#125;<br>    cout&lt;&lt;dp[n][n]&lt;&lt;<span class="hljs-string">&quot;\n&quot;</span>;<br>&#125;<br><br></code></pre></td></tr></table></figure>
 
 
 
-<h1 id="力扣周赛-双周赛"><a href="#力扣周赛-双周赛" class="headerlink" title="力扣周赛+双周赛"></a>力扣周赛+双周赛</h1><ol start="6365">
-<li>最少翻转操作数 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/minimum-reverse-operations/">URL</a></li>
-</ol>
-<p>数组 a[]，位置 p 值为1，否则为0。限制是某些位置要求不能为1。现在给定长度 k，问对于每个位置，求执行最少次数翻转长度为 k 子数组使得该位置为 1。</p>
-<p>通过画图可得下标为 i 的 1 翻转区间为 $[i-(k-1), i+(k-1)]$ 的公差为 2 的等差数列，对于越界的情况无法翻转，因此要处理边界情况，因此：左区间  $max(k-i-1, i-(k-1))$，右区间 $min(2*n-k-i-1,i+(k-1))$</p>
-<p>对于最小次数，考虑BFS。因为从数据看直接枚举区间的复杂度 $O(nk)$ 无法接受，考虑 set 维护备选下标，针对公差为 2 的情况使用两个 set 分别维护，不断删除。</p>
-<p>代码是学习别人的</p>
-<ol>
-<li>通过枚举 steps 的方式维护次数，而不是 queue&lt;pair&lt;index, cost&gt;&gt; &amp; while(que.size())</li>
-<li>枚举 set 可以 t &#x3D; s.erase(t)</li>
-<li>vector&lt;&gt; 维护队列 + move</li>
-<li>move方法，将左值强制转化为右值引用，用于移动语义。无内存拷贝等操作，转移对象的状态或所有权？所以这样效率比每次 push_back 要高</li>
-</ol>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">minReverseOperations</span><span class="hljs-params">(<span class="hljs-type">int</span> n, <span class="hljs-type">int</span> p, vector&lt;<span class="hljs-type">int</span>&gt;&amp; banned, <span class="hljs-type">int</span> k)</span> </span>&#123;<br>        set&lt;<span class="hljs-type">int</span>&gt; s[<span class="hljs-number">2</span>];<br>        unordered_set&lt;<span class="hljs-type">int</span>&gt; ban&#123;banned.<span class="hljs-built_in">begin</span>(), banned.<span class="hljs-built_in">end</span>()&#125;;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++) &#123;<br>            <span class="hljs-keyword">if</span>(i!=p&amp;&amp;!ban.<span class="hljs-built_in">count</span>(i)) &#123;<br>                s[i&amp;<span class="hljs-number">1</span>].<span class="hljs-built_in">insert</span>(i);<br>            &#125;<br>        &#125;<br>        s[<span class="hljs-number">0</span>].<span class="hljs-built_in">insert</span>(n);<br>        s[<span class="hljs-number">1</span>].<span class="hljs-built_in">insert</span>(n);<br><br>        <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">ans</span><span class="hljs-params">(n, <span class="hljs-number">-1</span>)</span></span>;<br>        vector&lt;<span class="hljs-type">int</span>&gt; que&#123;p&#125;;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> steps=<span class="hljs-number">0</span>; que.<span class="hljs-built_in">size</span>(); steps++) &#123;<br>            vector&lt;<span class="hljs-type">int</span>&gt; tmp;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i: que) &#123;<br>                ans[i]=steps;<br>                <span class="hljs-type">int</span> mn=<span class="hljs-built_in">max</span>(k-i<span class="hljs-number">-1</span>,i-k+<span class="hljs-number">1</span>);<br>                <span class="hljs-type">int</span> mx=<span class="hljs-built_in">min</span>(<span class="hljs-number">2</span>*n-k-i<span class="hljs-number">-1</span>,i+k<span class="hljs-number">-1</span>);<br>                set&lt;<span class="hljs-type">int</span>&gt;&amp; ss=s[mn&amp;<span class="hljs-number">1</span>];<br>                <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> it=ss.<span class="hljs-built_in">lower_bound</span>(mn); *it&lt;=mx; it=ss.<span class="hljs-built_in">erase</span>(it)) &#123;<br>                    tmp.<span class="hljs-built_in">push_back</span>(*it);<br>                &#125;<br>            &#125;<br>            que = <span class="hljs-built_in">move</span>(tmp);<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+    <div class="container-fluid nopadding-x">
+      <div class="row nomargin-x">
+        <div class="side-col d-none d-lg-block col-lg-2">
 
 
-
-<ol start="6329">
-<li>使子数组元素和相等 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/make-k-subarray-sums-equal/">URL</a></li>
-</ol>
-<p>循环数组 arr，求最小修改某个元素+1或-1的次数，使得任意长度为 k 的子数组元素总和相等</p>
-<p>可以根据长度为 k 的窗口推移得知 $a[i]&#x3D;a[i+k]&#x3D;a[i+2*k]&#x3D;…$ 循环周期为 k</p>
-<p>另外对于循环数组，因此天然周期为 n (数组长度)</p>
-<p>刚得知循环数组既有周期 n 又有周期 k，因此必然有周期 $gcd(n,k)$ 即 $a[i]&#x3D;a[i+nx+ky]&#x3D;a[i+gcd(n,k)]$ </p>
-<p>因此按周期分区间，然后使得同类数字最小次数相同，即取中位数</p>
-<p>学到了：</p>
-<ol>
-<li>两个周期可以 gcd，那三个周期？TODO</li>
-<li>nth_element() 方法</li>
-</ol>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">long</span> <span class="hljs-type">long</span> <span class="hljs-title">makeSubKSumEqual</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt; &amp;arr, <span class="hljs-type">int</span> k)</span> </span>&#123;<br>        <span class="hljs-type">int</span> n = arr.<span class="hljs-built_in">size</span>();<br>        k = <span class="hljs-built_in">gcd</span>(k, n);<br>        vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; <span class="hljs-built_in">g</span>(k);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i)<br>            g[i % k].<span class="hljs-built_in">push_back</span>(arr[i]);<br><br>        <span class="hljs-type">long</span> <span class="hljs-type">long</span> ans = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> &amp;b: g) &#123;<br>            <span class="hljs-built_in">nth_element</span>(b.<span class="hljs-built_in">begin</span>(), b.<span class="hljs-built_in">begin</span>() + b.<span class="hljs-built_in">size</span>() / <span class="hljs-number">2</span>, b.<span class="hljs-built_in">end</span>());<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> x: b)<br>                ans += <span class="hljs-built_in">abs</span>(x - b[b.<span class="hljs-built_in">size</span>() / <span class="hljs-number">2</span>]);<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
-
-
-                
-              </div>
-            
-            <hr/>
-            <div>
-              <div class="post-metas my-3">
-  
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E9%A2%98%E7%9B%AE/" class="category-chain-item">题目</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
-  
-</div>
-
-
-              
-  
-
-  <div class="license-box my-3">
-    <div class="license-title">
-      <div>近期的几道题目</div>
-      <div>http://plalyy.github.io/2023/04/02/230402近期几道题目/</div>
-    </div>
-    <div class="license-meta">
-      
-        <div class="license-meta-item">
-          <div>作者</div>
-          <div>Plalyy</div>
         </div>
-      
-      
-        <div class="license-meta-item license-meta-date">
-          <div>发布于</div>
-          <div>2023年4月2日</div>
-        </div>
-      
-      
-      
-        <div class="license-meta-item">
-          <div>许可协议</div>
-          <div>
-            
-              
-              
-                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
-                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
-                    <i class="iconfont icon-by"></i>
-                  </span>
-                </a>
-              
-            
-          </div>
-        </div>
-      
-    </div>
-    <div class="license-icon iconfont"></div>
-  </div>
+
+        <div class="col-lg-8 nopadding-x-md">
+          <div class="container nopadding-x-md" id="board-ctn">
+            <div id="board">
+              <article class="post-content mx-auto">
+                <!-- SEO header -->
+                <h1 style="display: none">近期的几道题目</h1>
+
+
+                <div class="markdown-body">
+
+                  <h1 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h1>
+                  <p>好久没做题了，思维和实现能力很明显的下滑，最大的问题是不太会思考了，需要多做一些防止痴呆。</p>
+                  <span id="more"></span>
+                  <h1 id="EOJ-图森未来杯"><a href="#EOJ-图森未来杯" class="headerlink" title="EOJ 图森未来杯"></a>EOJ 图森未来杯</h1>
+                  <p>比赛地址：<a target="_blank" rel="noopener" href="https://acm.ecnu.edu.cn/contest/621/">EOJ</a></p>
+                  <p>I. 宝箱<br>有n个红宝箱和n个蓝宝箱，需要在每个宝箱中放不同正整数的金币，且同颜色宝箱 a[i] &gt; a[i-1]，求宝箱最大金币数的最小值</p>
+                  <p>这道题目尝试DP未解出，是因为下意识将同一位置捆绑了，感觉有若干限制很难找到最优子问题。但DP的本质是什么呢？按自己现在的理解是在解空间寻求最优解向量？这样说不知道对不对。需要在理解层面加深。
+                  </p>
+                  <p>所以这道题可以用 dp[i][j] 表示红 i 蓝 j 后最大金币最小化的值，因此下一个要放的值是 dp[i][j] + 1（若奇偶性满足），否则 dp[i][j] + 2，然后更新状态。</p>
+                  <figure class="highlight c++">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;algorithm&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;vector&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">int</span> a[<span class="hljs-number">1020</span>], b[<span class="hljs-number">1020</span>];<br><span class="hljs-type">int</span> dp[<span class="hljs-number">1020</span>][<span class="hljs-number">1020</span>];<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-type">int</span> n;<br>    cin&gt;&gt;n;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;i++) &#123;<br>        cin&gt;&gt;a[i];<br>    &#125;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;i++) &#123;<br>        cin&gt;&gt;b[i];<br>    &#125;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;=n;i++) &#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">0</span>;j&lt;=n;j++) &#123;<br>            dp[i][j]=<span class="hljs-number">1e9</span>;<br>        &#125;<br>    &#125;<br>    dp[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;=n;i++) &#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">0</span>;j&lt;=n;j++) &#123;<br>            <span class="hljs-type">int</span> v=dp[i][j]+<span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">if</span>(i&lt;n) &#123;<br>                <span class="hljs-keyword">if</span>((a[i+<span class="hljs-number">1</span>]+v)%<span class="hljs-number">2</span>==<span class="hljs-number">0</span>)<br>                    dp[i+<span class="hljs-number">1</span>][j]=<span class="hljs-built_in">min</span>(dp[i+<span class="hljs-number">1</span>][j], dp[i][j]+<span class="hljs-number">1</span>);<br>                <span class="hljs-keyword">else</span> <br>                    dp[i+<span class="hljs-number">1</span>][j]=<span class="hljs-built_in">min</span>(dp[i+<span class="hljs-number">1</span>][j], dp[i][j]+<span class="hljs-number">2</span>);<br>            &#125;<br>            <span class="hljs-keyword">if</span>(j&lt;n) &#123;<br>                <span class="hljs-keyword">if</span>((b[j+<span class="hljs-number">1</span>]+v)%<span class="hljs-number">2</span>==<span class="hljs-number">0</span>) <br>                    dp[i][j+<span class="hljs-number">1</span>]=<span class="hljs-built_in">min</span>(dp[i][j+<span class="hljs-number">1</span>], dp[i][j]+<span class="hljs-number">1</span>);<br>                <span class="hljs-keyword">else</span> <br>                    dp[i][j+<span class="hljs-number">1</span>]=<span class="hljs-built_in">min</span>(dp[i][j+<span class="hljs-number">1</span>], dp[i][j]+<span class="hljs-number">2</span>);<br>            &#125;<br>        &#125;<br>    &#125;<br>    cout&lt;&lt;dp[n][n]&lt;&lt;<span class="hljs-string">&quot;\n&quot;</span>;<br>&#125;<br><br></code></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
 
 
 
-              
-                <div class="post-prevnext my-3">
-                  <article class="post-prev col-6">
-                    
-                    
+                  <h1 id="力扣周赛-双周赛"><a href="#力扣周赛-双周赛" class="headerlink" title="力扣周赛+双周赛"></a>力扣周赛+双周赛</h1>
+                  <ol start="6365">
+                    <li>最少翻转操作数 <a target="_blank" rel="noopener"
+                        href="https://leetcode.cn/problems/minimum-reverse-operations/">URL</a></li>
+                  </ol>
+                  <p>数组 a[]，位置 p 值为1，否则为0。限制是某些位置要求不能为1。现在给定长度 k，问对于每个位置，求执行最少次数翻转长度为 k 子数组使得该位置为 1。</p>
+                  <p>通过画图可得下标为 i 的 1 翻转区间为 $[i-(k-1), i+(k-1)]$ 的公差为 2 的等差数列，对于越界的情况无法翻转，因此要处理边界情况，因此：左区间 $max(k-i-1,
+                    i-(k-1))$，右区间 $min(2*n-k-i-1,i+(k-1))$</p>
+                  <p>对于最小次数，考虑BFS。因为从数据看直接枚举区间的复杂度 $O(nk)$ 无法接受，考虑 set 维护备选下标，针对公差为 2 的情况使用两个 set 分别维护，不断删除。</p>
+                  <p>代码是学习别人的</p>
+                  <ol>
+                    <li>通过枚举 steps 的方式维护次数，而不是 queue&lt;pair&lt;index, cost&gt;&gt; &amp; while(que.size())</li>
+                    <li>枚举 set 可以 t &#x3D; s.erase(t)</li>
+                    <li>vector&lt;&gt; 维护队列 + move</li>
+                    <li>move方法，将左值强制转化为右值引用，用于移动语义。无内存拷贝等操作，转移对象的状态或所有权？所以这样效率比每次 push_back 要高</li>
+                  </ol>
+                  <figure class="highlight c++">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">minReverseOperations</span><span class="hljs-params">(<span class="hljs-type">int</span> n, <span class="hljs-type">int</span> p, vector&lt;<span class="hljs-type">int</span>&gt;&amp; banned, <span class="hljs-type">int</span> k)</span> </span>&#123;<br>        set&lt;<span class="hljs-type">int</span>&gt; s[<span class="hljs-number">2</span>];<br>        unordered_set&lt;<span class="hljs-type">int</span>&gt; ban&#123;banned.<span class="hljs-built_in">begin</span>(), banned.<span class="hljs-built_in">end</span>()&#125;;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++) &#123;<br>            <span class="hljs-keyword">if</span>(i!=p&amp;&amp;!ban.<span class="hljs-built_in">count</span>(i)) &#123;<br>                s[i&amp;<span class="hljs-number">1</span>].<span class="hljs-built_in">insert</span>(i);<br>            &#125;<br>        &#125;<br>        s[<span class="hljs-number">0</span>].<span class="hljs-built_in">insert</span>(n);<br>        s[<span class="hljs-number">1</span>].<span class="hljs-built_in">insert</span>(n);<br><br>        <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">ans</span><span class="hljs-params">(n, <span class="hljs-number">-1</span>)</span></span>;<br>        vector&lt;<span class="hljs-type">int</span>&gt; que&#123;p&#125;;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> steps=<span class="hljs-number">0</span>; que.<span class="hljs-built_in">size</span>(); steps++) &#123;<br>            vector&lt;<span class="hljs-type">int</span>&gt; tmp;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i: que) &#123;<br>                ans[i]=steps;<br>                <span class="hljs-type">int</span> mn=<span class="hljs-built_in">max</span>(k-i<span class="hljs-number">-1</span>,i-k+<span class="hljs-number">1</span>);<br>                <span class="hljs-type">int</span> mx=<span class="hljs-built_in">min</span>(<span class="hljs-number">2</span>*n-k-i<span class="hljs-number">-1</span>,i+k<span class="hljs-number">-1</span>);<br>                set&lt;<span class="hljs-type">int</span>&gt;&amp; ss=s[mn&amp;<span class="hljs-number">1</span>];<br>                <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> it=ss.<span class="hljs-built_in">lower_bound</span>(mn); *it&lt;=mx; it=ss.<span class="hljs-built_in">erase</span>(it)) &#123;<br>                    tmp.<span class="hljs-built_in">push_back</span>(*it);<br>                &#125;<br>            &#125;<br>            que = <span class="hljs-built_in">move</span>(tmp);<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br></code></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+
+
+
+                  <ol start="6329">
+                    <li>使子数组元素和相等 <a target="_blank" rel="noopener"
+                        href="https://leetcode.cn/problems/make-k-subarray-sums-equal/">URL</a></li>
+                  </ol>
+                  <p>循环数组 arr，求最小修改某个元素+1或-1的次数，使得任意长度为 k 的子数组元素总和相等</p>
+                  <p>可以根据长度为 k 的窗口推移得知 $a[i]&#x3D;a[i+k]&#x3D;a[i+2*k]&#x3D;…$ 循环周期为 k</p>
+                  <p>另外对于循环数组，因此天然周期为 n (数组长度)</p>
+                  <p>刚得知循环数组既有周期 n 又有周期 k，因此必然有周期 $gcd(n,k)$ 即 $a[i]&#x3D;a[i+nx+ky]&#x3D;a[i+gcd(n,k)]$ </p>
+                  <p>因此按周期分区间，然后使得同类数字最小次数相同，即取中位数</p>
+                  <p>学到了：</p>
+                  <ol>
+                    <li>两个周期可以 gcd，那三个周期？TODO</li>
+                    <li>nth_element() 方法</li>
+                  </ol>
+                  <figure class="highlight c++">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">long</span> <span class="hljs-type">long</span> <span class="hljs-title">makeSubKSumEqual</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt; &amp;arr, <span class="hljs-type">int</span> k)</span> </span>&#123;<br>        <span class="hljs-type">int</span> n = arr.<span class="hljs-built_in">size</span>();<br>        k = <span class="hljs-built_in">gcd</span>(k, n);<br>        vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; <span class="hljs-built_in">g</span>(k);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i)<br>            g[i % k].<span class="hljs-built_in">push_back</span>(arr[i]);<br><br>        <span class="hljs-type">long</span> <span class="hljs-type">long</span> ans = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> &amp;b: g) &#123;<br>            <span class="hljs-built_in">nth_element</span>(b.<span class="hljs-built_in">begin</span>(), b.<span class="hljs-built_in">begin</span>() + b.<span class="hljs-built_in">size</span>() / <span class="hljs-number">2</span>, b.<span class="hljs-built_in">end</span>());<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> x: b)<br>                ans += <span class="hljs-built_in">abs</span>(x - b[b.<span class="hljs-built_in">size</span>() / <span class="hljs-number">2</span>]);<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br></code></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+
+
+
+                </div>
+
+                <hr />
+                <div>
+                  <div class="post-metas my-3">
+
+                    <div class="post-meta mr-3 d-flex align-items-center">
+                      <i class="iconfont icon-category"></i>
+
+
+                      <span class="category-chains">
+
+
+
+                        <span class="category-chain">
+
+                          <a href="/categories/%E9%A2%98%E7%9B%AE/" class="category-chain-item">题目</a>
+
+
+
+                        </span>
+
+
+                      </span>
+
+                    </div>
+
+
+                  </div>
+
+
+
+
+
+                  <div class="license-box my-3">
+                    <div class="license-title">
+                      <div>近期的几道题目</div>
+                      <div>http://plalyy.github.io/2023/04/02/230402近期几道题目/</div>
+                    </div>
+                    <div class="license-meta">
+
+                      <div class="license-meta-item">
+                        <div>作者</div>
+                        <div>Plalyy</div>
+                      </div>
+
+
+                      <div class="license-meta-item license-meta-date">
+                        <div>发布于</div>
+                        <div>2023年4月2日</div>
+                      </div>
+
+
+
+                      <div class="license-meta-item">
+                        <div>许可协议</div>
+                        <div>
+
+
+
+                          <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                            <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                              <i class="iconfont icon-by"></i>
+                            </span>
+                          </a>
+
+
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="license-icon iconfont"></div>
+                  </div>
+
+
+
+
+                  <div class="post-prevnext my-3">
+                    <article class="post-prev col-6">
+
+
                       <a href="/2023/04/03/230403_4AM%E5%A4%BA%E5%86%A0%E5%95%A6/" title="4AM夺冠啦">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">4AM夺冠啦</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/2023/01/07/230107%E5%85%B3%E4%BA%8E%E6%94%BE%E5%BC%83%E5%92%8C%E5%86%B3%E5%BF%83/" title="关于放弃和决心">
+
+                    </article>
+                    <article class="post-next col-6">
+
+
+                      <a href="/2023/01/07/230107%E5%85%B3%E4%BA%8E%E6%94%BE%E5%BC%83%E5%92%8C%E5%86%B3%E5%BF%83/"
+                        title="关于放弃和决心">
                         <span class="hidden-mobile">关于放弃和决心</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
-                    
-                  </article>
+
+                    </article>
+                  </div>
+
                 </div>
-              
+
+
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="side-col d-none d-lg-block col-lg-2">
+
+          <aside class="sidebar" style="margin-left: -1rem">
+            <div id="toc">
+              <p class="toc-header">
+                <i class="iconfont icon-list"></i>
+                <span>目录</span>
+              </p>
+              <div class="toc-body" id="toc-body"></div>
             </div>
 
-            
-          </article>
+
+
+          </aside>
+
+
         </div>
       </div>
     </div>
 
-    <div class="side-col d-none d-lg-block col-lg-2">
-      
-  <aside class="sidebar" style="margin-left: -1rem">
-    <div id="toc">
-  <p class="toc-header">
-    <i class="iconfont icon-list"></i>
-    <span>目录</span>
-  </p>
-  <div class="toc-body" id="toc-body"></div>
-</div>
-
-
-
-  </aside>
-
-
-    </div>
-  </div>
-</div>
-
-
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-  
 
 
 
@@ -473,149 +494,172 @@
 
 
 
-    
 
-    
-      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
-        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-      </a>
-    
 
-    
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+
+
+
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+            <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body mx-3">
+            <div class="md-form mb-5">
+              <input type="text" id="local-search-input" class="form-control validate">
+              <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+            </div>
+            <div class="list-group" id="local-search-result"></div>
+          </div>
         </div>
-        <div class="list-group" id="local-search-result"></div>
       </div>
     </div>
-  </div>
-</div>
 
-    
 
-    
+
+
   </main>
 
   <footer>
     <div class="footer-inner">
-  
-    <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
-    </div>
-  
-  
-  
-    <!-- 备案信息 ICP for China -->
-    <div class="beian">
-  <span>
-    <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
-      豫ICP备2021001824号
-    </a>
-  </span>
-  
-</div>
 
-  
-  
-</div>
+      <div class="footer-content">
+        <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i
+          class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank"
+          rel="nofollow noopener"><span>Fluid</span></a>
+      </div>
+
+
+
+      <!-- 备案信息 ICP for China -->
+      <div class="beian">
+        <span>
+          <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+            豫ICP备2021001824号
+          </a>
+        </span>
+
+      </div>
+
+
+
+    </div>
 
   </footer>
 
   <!-- Scripts -->
-  
-  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <link rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
 
   <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.configure({ "showSpinner": false, "trickleSpeed": 100 })
     NProgress.start()
-    window.addEventListener('load', function() {
+    window.addEventListener('load', function () {
       NProgress.done();
     })
   </script>
 
 
-<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
-<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+  <script src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js"></script>
+  <script src="/js/events.js"></script>
+  <script src="/js/plugins.js"></script>
 
 
-  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js"></script>
   <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var subtitle = document.getElementById('subtitle');
-      if (!subtitle || !typing) {
-        return;
-      }
-      var text = subtitle.getAttribute('data-typed-text');
-      
+      (function (window, document) {
+        var typing = Fluid.plugins.typing;
+        var subtitle = document.getElementById('subtitle');
+        if (!subtitle || !typing) {
+          return;
+        }
+        var text = subtitle.getAttribute('data-typed-text');
+
         typing(text);
-      
-    })(window, document);
+
+      })(window, document);
   </script>
 
 
 
 
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
+
+  <script src="/js/img-lazyload.js"></script>
 
 
 
 
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
-    var toc = jQuery('#toc');
-    if (toc.length === 0 || !window.tocbot) { return; }
-    var boardCtn = jQuery('#board-ctn');
-    var boardTop = boardCtn.offset().top;
 
-    window.tocbot.init(Object.assign({
-      tocSelector     : '#toc-body',
-      contentSelector : '.markdown-body',
-      linkClass       : 'tocbot-link',
-      activeLinkClass : 'tocbot-active-link',
-      listClass       : 'tocbot-list',
-      isCollapsedClass: 'tocbot-is-collapsed',
-      collapsibleClass: 'tocbot-is-collapsible',
-      scrollSmooth    : true,
-      includeTitleTags: true,
-      headingsOffset  : -boardTop,
-    }, CONFIG.toc));
-    if (toc.find('.toc-list-item').length > 0) {
-      toc.css('visibility', 'visible');
-    }
 
-    Fluid.events.registerRefreshCallback(function() {
-      if ('tocbot' in window) {
-        tocbot.refresh();
-        var toc = jQuery('#toc');
-        if (toc.length === 0 || !tocbot) {
-          return;
-        }
-        if (toc.find('.toc-list-item').length > 0) {
-          toc.css('visibility', 'visible');
-        }
+  <script>
+    Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function () {
+      var toc = jQuery('#toc');
+      if (toc.length === 0 || !window.tocbot) { return; }
+      var boardCtn = jQuery('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      window.tocbot.init(Object.assign({
+        tocSelector: '#toc-body',
+        contentSelector: '.markdown-body',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        scrollSmooth: true,
+        includeTitleTags: true,
+        headingsOffset: -boardTop,
+      }, CONFIG.toc));
+      if (toc.find('.toc-list-item').length > 0) {
+        toc.css('visibility', 'visible');
       }
+
+      Fluid.events.registerRefreshCallback(function () {
+        if ('tocbot' in window) {
+          tocbot.refresh();
+          var toc = jQuery('#toc');
+          if (toc.length === 0 || !tocbot) {
+            return;
+          }
+          if (toc.find('.toc-list-item').length > 0) {
+            toc.css('visibility', 'visible');
+          }
+        }
+      });
     });
-  });
-</script>
+  </script>
 
 
   <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
@@ -623,69 +667,70 @@
   <script>Fluid.plugins.codeWidget();</script>
 
 
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
-    window.anchors.options = {
-      placement: CONFIG.anchorjs.placement,
-      visible  : CONFIG.anchorjs.visible
-    };
-    if (CONFIG.anchorjs.icon) {
-      window.anchors.options.icon = CONFIG.anchorjs.icon;
-    }
-    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
-    var res = [];
-    for (var item of el) {
-      res.push('.markdown-body > ' + item.trim());
-    }
-    if (CONFIG.anchorjs.placement === 'left') {
-      window.anchors.options.class = 'anchorjs-link-left';
-    }
-    window.anchors.add(res.join(', '));
 
-    Fluid.events.registerRefreshCallback(function() {
-      if ('anchors' in window) {
-        anchors.removeAll();
-        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
-        var res = [];
-        for (var item of el) {
-          res.push('.markdown-body > ' + item.trim());
-        }
-        if (CONFIG.anchorjs.placement === 'left') {
-          anchors.options.class = 'anchorjs-link-left';
-        }
-        anchors.add(res.join(', '));
+  <script>
+    Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function () {
+      window.anchors.options = {
+        placement: CONFIG.anchorjs.placement,
+        visible: CONFIG.anchorjs.visible
+      };
+      if (CONFIG.anchorjs.icon) {
+        window.anchors.options.icon = CONFIG.anchorjs.icon;
       }
+      var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+      var res = [];
+      for (var item of el) {
+        res.push('.markdown-body > ' + item.trim());
+      }
+      if (CONFIG.anchorjs.placement === 'left') {
+        window.anchors.options.class = 'anchorjs-link-left';
+      }
+      window.anchors.add(res.join(', '));
+
+      Fluid.events.registerRefreshCallback(function () {
+        if ('anchors' in window) {
+          anchors.removeAll();
+          var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+          var res = [];
+          for (var item of el) {
+            res.push('.markdown-body > ' + item.trim());
+          }
+          if (CONFIG.anchorjs.placement === 'left') {
+            anchors.options.class = 'anchorjs-link-left';
+          }
+          anchors.add(res.join(', '));
+        }
+      });
     });
-  });
-</script>
+  </script>
 
 
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
-    Fluid.plugins.fancyBox();
-  });
-</script>
+
+  <script>
+    Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function () {
+      Fluid.plugins.fancyBox();
+    });
+  </script>
 
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/js/local-search.js" ></script>
+  <script src="/js/local-search.js"></script>
 
 
 
 
 
-<!-- 主题的启动项，将它保持在最底部 -->
-<!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
+  <!-- 主题的启动项，将它保持在最底部 -->
+  <!-- the boot of the theme, keep it at the bottom -->
+  <script src="/js/boot.js"></script>
 
 
-  
+
 
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
 </body>
+
 </html>
