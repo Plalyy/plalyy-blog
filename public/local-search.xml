@@ -61,25 +61,6 @@
   
   
   <entry>
-    <title>近期的几道题目</title>
-    <link href="/2023/04/02/230402%E8%BF%91%E6%9C%9F%E5%87%A0%E9%81%93%E9%A2%98%E7%9B%AE/"/>
-    <url>/2023/04/02/230402%E8%BF%91%E6%9C%9F%E5%87%A0%E9%81%93%E9%A2%98%E7%9B%AE/</url>
-    
-    <content type="html"><![CDATA[<h1 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h1><p>好久没做题了，思维和实现能力很明显的下滑，最大的问题是不太会思考了，需要多做一些防止痴呆。</p><span id="more"></span><h1 id="EOJ-图森未来杯"><a href="#EOJ-图森未来杯" class="headerlink" title="EOJ 图森未来杯"></a>EOJ 图森未来杯</h1><p>比赛地址：<a href="https://acm.ecnu.edu.cn/contest/621/">EOJ</a></p><p>I. 宝箱<br>有n个红宝箱和n个蓝宝箱，需要在每个宝箱中放不同正整数的金币，且同颜色宝箱 a[i] &gt; a[i-1]，求宝箱最大金币数的最小值</p><p>这道题目尝试DP未解出，是因为下意识将同一位置捆绑了，感觉有若干限制很难找到最优子问题。但DP的本质是什么呢？按自己现在的理解是在解空间寻求最优解向量？这样说不知道对不对。需要在理解层面加深。</p><p>所以这道题可以用 dp[i][j] 表示红 i 蓝 j 后最大金币最小化的值，因此下一个要放的值是 dp[i][j] + 1（若奇偶性满足），否则 dp[i][j] + 2，然后更新状态。</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;algorithm&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;vector&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">int</span> a[<span class="hljs-number">1020</span>], b[<span class="hljs-number">1020</span>];<br><span class="hljs-type">int</span> dp[<span class="hljs-number">1020</span>][<span class="hljs-number">1020</span>];<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-type">int</span> n;<br>    cin&gt;&gt;n;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;i++) &#123;<br>        cin&gt;&gt;a[i];<br>    &#125;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;i++) &#123;<br>        cin&gt;&gt;b[i];<br>    &#125;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;=n;i++) &#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">0</span>;j&lt;=n;j++) &#123;<br>            dp[i][j]=<span class="hljs-number">1e9</span>;<br>        &#125;<br>    &#125;<br>    dp[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;=n;i++) &#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">0</span>;j&lt;=n;j++) &#123;<br>            <span class="hljs-type">int</span> v=dp[i][j]+<span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">if</span>(i&lt;n) &#123;<br>                <span class="hljs-keyword">if</span>((a[i+<span class="hljs-number">1</span>]+v)%<span class="hljs-number">2</span>==<span class="hljs-number">0</span>)<br>                    dp[i+<span class="hljs-number">1</span>][j]=<span class="hljs-built_in">min</span>(dp[i+<span class="hljs-number">1</span>][j], dp[i][j]+<span class="hljs-number">1</span>);<br>                <span class="hljs-keyword">else</span> <br>                    dp[i+<span class="hljs-number">1</span>][j]=<span class="hljs-built_in">min</span>(dp[i+<span class="hljs-number">1</span>][j], dp[i][j]+<span class="hljs-number">2</span>);<br>            &#125;<br>            <span class="hljs-keyword">if</span>(j&lt;n) &#123;<br>                <span class="hljs-keyword">if</span>((b[j+<span class="hljs-number">1</span>]+v)%<span class="hljs-number">2</span>==<span class="hljs-number">0</span>) <br>                    dp[i][j+<span class="hljs-number">1</span>]=<span class="hljs-built_in">min</span>(dp[i][j+<span class="hljs-number">1</span>], dp[i][j]+<span class="hljs-number">1</span>);<br>                <span class="hljs-keyword">else</span> <br>                    dp[i][j+<span class="hljs-number">1</span>]=<span class="hljs-built_in">min</span>(dp[i][j+<span class="hljs-number">1</span>], dp[i][j]+<span class="hljs-number">2</span>);<br>            &#125;<br>        &#125;<br>    &#125;<br>    cout&lt;&lt;dp[n][n]&lt;&lt;<span class="hljs-string">&quot;\n&quot;</span>;<br>&#125;<br><br></code></pre></td></tr></table></figure><h1 id="力扣周赛-双周赛"><a href="#力扣周赛-双周赛" class="headerlink" title="力扣周赛+双周赛"></a>力扣周赛+双周赛</h1><ol start="6365"><li>最少翻转操作数 <a href="https://leetcode.cn/problems/minimum-reverse-operations/">URL</a></li></ol><p>数组 a[]，位置 p 值为1，否则为0。限制是某些位置要求不能为1。现在给定长度 k，问对于每个位置，求执行最少次数翻转长度为 k 子数组使得该位置为 1。</p><p>通过画图可得下标为 i 的 1 翻转区间为 $[i-(k-1), i+(k-1)]$ 的公差为 2 的等差数列，对于越界的情况无法翻转，因此要处理边界情况，因此：左区间  $max(k-i-1, i-(k-1))$，右区间 $min(2*n-k-i-1,i+(k-1))$</p><p>对于最小次数，考虑BFS。因为从数据看直接枚举区间的复杂度 $O(nk)$ 无法接受，考虑 set 维护备选下标，针对公差为 2 的情况使用两个 set 分别维护，不断删除。</p><p>代码是学习别人的</p><ol><li>通过枚举 steps 的方式维护次数，而不是 queue&lt;pair&lt;index, cost&gt;&gt; &amp; while(que.size())</li><li>枚举 set 可以 t &#x3D; s.erase(t)</li><li>vector&lt;&gt; 维护队列 + move</li><li>move方法，将左值强制转化为右值引用，用于移动语义。无内存拷贝等操作，转移对象的状态或所有权？所以这样效率比每次 push_back 要高</li></ol><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">minReverseOperations</span><span class="hljs-params">(<span class="hljs-type">int</span> n, <span class="hljs-type">int</span> p, vector&lt;<span class="hljs-type">int</span>&gt;&amp; banned, <span class="hljs-type">int</span> k)</span> </span>&#123;<br>        set&lt;<span class="hljs-type">int</span>&gt; s[<span class="hljs-number">2</span>];<br>        unordered_set&lt;<span class="hljs-type">int</span>&gt; ban&#123;banned.<span class="hljs-built_in">begin</span>(), banned.<span class="hljs-built_in">end</span>()&#125;;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++) &#123;<br>            <span class="hljs-keyword">if</span>(i!=p&amp;&amp;!ban.<span class="hljs-built_in">count</span>(i)) &#123;<br>                s[i&amp;<span class="hljs-number">1</span>].<span class="hljs-built_in">insert</span>(i);<br>            &#125;<br>        &#125;<br>        s[<span class="hljs-number">0</span>].<span class="hljs-built_in">insert</span>(n);<br>        s[<span class="hljs-number">1</span>].<span class="hljs-built_in">insert</span>(n);<br><br>        <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">ans</span><span class="hljs-params">(n, <span class="hljs-number">-1</span>)</span></span>;<br>        vector&lt;<span class="hljs-type">int</span>&gt; que&#123;p&#125;;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> steps=<span class="hljs-number">0</span>; que.<span class="hljs-built_in">size</span>(); steps++) &#123;<br>            vector&lt;<span class="hljs-type">int</span>&gt; tmp;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i: que) &#123;<br>                ans[i]=steps;<br>                <span class="hljs-type">int</span> mn=<span class="hljs-built_in">max</span>(k-i<span class="hljs-number">-1</span>,i-k+<span class="hljs-number">1</span>);<br>                <span class="hljs-type">int</span> mx=<span class="hljs-built_in">min</span>(<span class="hljs-number">2</span>*n-k-i<span class="hljs-number">-1</span>,i+k<span class="hljs-number">-1</span>);<br>                set&lt;<span class="hljs-type">int</span>&gt;&amp; ss=s[mn&amp;<span class="hljs-number">1</span>];<br>                <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> it=ss.<span class="hljs-built_in">lower_bound</span>(mn); *it&lt;=mx; it=ss.<span class="hljs-built_in">erase</span>(it)) &#123;<br>                    tmp.<span class="hljs-built_in">push_back</span>(*it);<br>                &#125;<br>            &#125;<br>            que = <span class="hljs-built_in">move</span>(tmp);<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure><ol start="6329"><li>使子数组元素和相等 <a href="https://leetcode.cn/problems/make-k-subarray-sums-equal/">URL</a></li></ol><p>循环数组 arr，求最小修改某个元素+1或-1的次数，使得任意长度为 k 的子数组元素总和相等</p><p>可以根据长度为 k 的窗口推移得知 $a[i]&#x3D;a[i+k]&#x3D;a[i+2*k]&#x3D;…$ 循环周期为 k</p><p>另外对于循环数组，因此天然周期为 n (数组长度)</p><p>刚得知循环数组既有周期 n 又有周期 k，因此必然有周期 $gcd(n,k)$ 即 $a[i]&#x3D;a[i+nx+ky]&#x3D;a[i+gcd(n,k)]$ </p><p>因此按周期分区间，然后使得同类数字最小次数相同，即取中位数</p><p>学到了：</p><ol><li>两个周期可以 gcd，那三个周期？TODO</li><li>nth_element() 方法</li></ol><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">long</span> <span class="hljs-type">long</span> <span class="hljs-title">makeSubKSumEqual</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt; &amp;arr, <span class="hljs-type">int</span> k)</span> </span>&#123;<br>        <span class="hljs-type">int</span> n = arr.<span class="hljs-built_in">size</span>();<br>        k = <span class="hljs-built_in">gcd</span>(k, n);<br>        vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; <span class="hljs-built_in">g</span>(k);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i)<br>            g[i % k].<span class="hljs-built_in">push_back</span>(arr[i]);<br><br>        <span class="hljs-type">long</span> <span class="hljs-type">long</span> ans = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> &amp;b: g) &#123;<br>            <span class="hljs-built_in">nth_element</span>(b.<span class="hljs-built_in">begin</span>(), b.<span class="hljs-built_in">begin</span>() + b.<span class="hljs-built_in">size</span>() / <span class="hljs-number">2</span>, b.<span class="hljs-built_in">end</span>());<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> x: b)<br>                ans += <span class="hljs-built_in">abs</span>(x - b[b.<span class="hljs-built_in">size</span>() / <span class="hljs-number">2</span>]);<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-    <categories>
-      
-      <category>题目</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>关于放弃和决心</title>
     <link href="/2023/01/07/230107%E5%85%B3%E4%BA%8E%E6%94%BE%E5%BC%83%E5%92%8C%E5%86%B3%E5%BF%83/"/>
     <url>/2023/01/07/230107%E5%85%B3%E4%BA%8E%E6%94%BE%E5%BC%83%E5%92%8C%E5%86%B3%E5%BF%83/</url>
@@ -122,7 +103,7 @@
     <link href="/2022/08/28/220828%E5%85%B3%E4%BA%8EOutWinter%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BA%8B%E6%83%85/"/>
     <url>/2022/08/28/220828%E5%85%B3%E4%BA%8EOutWinter%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BA%8B%E6%83%85/</url>
     
-    <content type="html"><![CDATA[<p>关于 OutWinter，有一些想记录的。</p><span id="more"></span><p>自己从小学初中开始就比较喜欢一起奋进的小群体，到了大学还曾在知乎写过回答，说羡慕这样一群人，共同学习成长，玩的也很开心。在 ACM 集训队时，和队友们的相处也比较像这种形式，退役后和杰哥、沈逸翔、孙逸融有这样的群，也和一些朋友有相关的交流。我总是想一些奇奇怪怪的点子，一个人的驱动性不够，找不到一群人齐头并进时会有一点小难过。</p><p>入职后，空闲的时间会去看一些项目，也有一些中二或自觉得好玩的想法。阮健乘来线下的第一天，我们就说写个 OS 吧！他说，叫 Linuix（中文名叫刘内克斯），当时越讲越好玩，后来也真的去学了相关的知识，不过主要代码还是靠他贡献的，算是一个刚起步的小项目。后来孙逸融蜜月归来，聊到他的相册项目，后来又聊到写点什么好，说要不我们去写 APP 吧，就这样确定下了「CEO」和 「CTO」，就是这样随意。陈浚逸离开上海前，再加上本翔，中午出去吃了个饭。聊到搞个 team 一起做东西的想法，也是畅想了很多，但初步目标就是学习点知识本领，我开玩笑说这是第一次股东大会吧，用爱发电的那种。</p><p>后来又和孙逸融聊了几次这方面的事情，做一个 team，哪怕是好玩做个 APP，也能给异地恋的情侣玩吧。这里的异地恋专指他，应该不能指我了。在创建 github 组织的时候，想了很多个名字都被占用，于是就有了这个名字「OutWinter」，本意就是过冬。感觉在很多地方接收的都是负面信息和负面情绪，希望 OutWinter 能带来点不一样的东西。</p><p>现在总觉得自己是温水中的青蛙，甚至不如青蛙，叫蛤蟆。还没想好未来的路，感觉目前在慢慢消耗，是未来出国，还是真的拿到一些钱回去考公务员，感觉到一种限制「未来的人生，就这样一条路走下去吗」。到了 23 岁，才更懂得以前文章《未选择的路》的某种含义，总觉得时间不够用，人生宽度不够用。目前还没有比较看开的观点，希望在有限的时间内，多折腾一些事情，多想想「我还能做些什么」。</p><p>这就是 OutWinter 最初的故事，希望它可以承载一些人的热情，做一些事情，走下去。</p><p>之后有做一个 Team 页面，目前先附上 OutWinter 的 github 链接<a href="https://github.com/outwinter"> 🔗🔗🔗 </a></p>]]></content>
+    <content type="html"><![CDATA[<p>关于 OutWinter，有一些想记录的。</p><span id="more"></span><p>从小学初中开始就比较喜欢一起奋进的小群体，到大学在知乎写过回答，羡慕一群人共同学习成长，玩的也很开心。在 ACM 集训队时，和队友们的相处比较像这种形式，退役后和和一些朋友有相关的交流。我总是想一些奇奇怪怪的点子，一个人的驱动性不够，找不到一群人齐头并进时又会有一点小难过。</p><p>入职后，空闲时间会看一些项目，也有一些中二、自觉得好玩的想法。阮健乘来线下的第一天，我们就说写个 OS 吧！他说叫 Linuix（中文名叫刘内克斯），当时越讲越好玩，后来去学了相关知识，又荒废停滞了。后来孙逸融蜜月归来，聊到他的相册项目，又聊到写点什么好，说要不我们去写 APP 吧，就这样确定下了「CEO」和「CTO」，就是这样随意。陈浚逸离开上海前，再加上本翔，中午出去吃了个饭。聊到搞个 team 一起做东西的想法，也是畅想了很多。</p><p>后来和孙逸融常聊一些设想，也有一些想落地的想法，在创建 github 组织的时候，想了很多个名字都被占用，于是就有了这个名字「OutWinter」，本意就是过冬，不仅指互联网的寒冬。最近接收的很多都是负面信息和负面情绪，希望 OutWinter 能带来点不一样的东西。</p><p>觉得自己像是温水中的青蛙，没想好未来的路，在慢慢消耗，感觉到「未来的人生，就这样一条路走下去吗」。到了 23 岁，才更懂得以前文章《未选择的路》的某种含义，总觉得时间不够用，人生宽度不够。目前还没有比较看开的观点，希望在有限的时间内，多折腾一些事情，多想想「我还能做些什么」。</p><p>这就是 OutWinter 最初的故事，希望它可以承载一些人的热情，做一些事情，走下去。</p><p>之后有做一个 Team 页面，目前先附上 OutWinter 的 github 链接<a href="https://github.com/outwinter"> 🔗🔗🔗 </a></p>]]></content>
     
     
     <categories>
@@ -156,44 +137,6 @@
   
   
   <entry>
-    <title>kick start Round B 2022</title>
-    <link href="/2022/04/23/220423kick%20start%20Round%20B%202022/"/>
-    <url>/2022/04/23/220423kick%20start%20Round%20B%202022/</url>
-    
-    <content type="html"><![CDATA[<p>前几天邮箱收到kick start的通知，想着自己从没正式参与过，看能不能过了这轮就打算参加。后面才发现把kick start和code jam弄混了。</p><span id="more"></span><p><a href="https://codingcompetitions.withgoogle.com/kickstart/round/00000000008caa74">kick start链接</a></p><p>所幸排名还比较好，但也暴露了许多问题的。</p><p>A题是个很简单的暴力模拟，自己却怂的觉得不会这么简单，耽误了几分钟。</p><p>B题是统计一个数字(&lt;&#x3D;1e10)有多少个回文因子，dfs搜索前半段然后按奇偶拼接后半段判断即可，自己又看偏了导致耽误了很久。</p><p>C题问一个多轮盘的密码锁，每次可以使得一个区间的轮盘同步转动，每次的区间要求是下次区间的子集，问最少转动次数使得所有位置为0。首先可以想到，要不断扩散使得连续相同的数字变多，每次可以向两边扩散。这也就是区间DP的思路，遂解决。但自己好久没有思考做题，中间碰到了一些低级错误，需要复健呀。</p><p>D题是一个网格图，有空地和建筑物，要求构造出一种方案使得经过所有空地一次并回到原地。Test set 1指定建筑物一定在偶数坐标位置，将网格图画出来后，发现很明显可以直接输出构造。而Test set 2没有具体规定，没有解决，稍后补题。</p><p>总结来看，自己的水平相比之前下滑了特别多，思路不是很清晰，代码实现能力相对来说更差。这样来看，还可以取得更高的水平吧，希望下一轮能取得更好的成绩。</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>技术</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>大四校内隔离时的碎碎念</title>
-    <link href="/2022/04/21/220421%E5%A4%A7%E5%9B%9B%E6%A0%A1%E5%86%85%E9%9A%94%E7%A6%BB%E7%9A%84%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
-    <url>/2022/04/21/220421%E5%A4%A7%E5%9B%9B%E6%A0%A1%E5%86%85%E9%9A%94%E7%A6%BB%E7%9A%84%E7%A2%8E%E7%A2%8E%E5%BF%B5/</url>
-    
-    <content type="html"><![CDATA[<span id="more"></span><p>大一大二有些放纵，疫情时则摧毁了自己。大家有的去了很好的学校、公司，有的也留在这里，有的朋友去找另些路。关于未来，我因和别人比较不断产生压垮我的焦虑，好不容易暂停比较后，竟发现对未来没了念想。未来就是工作，然后房车，如果有缘分的话能碰到一个相互喜欢的人。可能有自己胡思乱想、自我堕落的原因，也有身边其他负面的信息，对很多东西有点麻木，心中的火没了，眼中的光也灭了。</p><p>说起来心中的火，眼中的光。高考时其实很不满意，但无限自我怀疑，在客厅翻动页面时就锁定了上海大学。到学校第一时间，就被冲没了自我。感觉一切都好陌生，自己从来习惯掌握之中的感觉，那天买奶茶，那好像是我第一次喝奶茶店的奶茶，听不懂店员问的几分糖什么的，烈日把我的全部水分催到脸上。我一紧张心虚，就会冒冷汗，无数次。我逃避社团，逃避学管会，只有当班长才让我有比较好的感觉吧。第一学期绩点还不错，有点小骄傲了，莫名的勇气去了郑州，又落荒而逃。原来我的自信，全来源于一点点小价值。我站在了飘渺的云上，心中的火没了柴，眼中的光也没了能量。</p><p>期间算法竞赛能给我带了些安慰，运气不错，结果能掩饰我。拿了奖项，也好运的拿到几个公司的offer，最后保研名额没舍得放弃，结果对本校并不满意，在实习期间也开始了飘渺，想太多。</p><p>离职，想的是给自己一段时间。但实际上有的人，改变不在于时间的长短，或者说改变不受时间的正向影响。也许正是好运地经历了这么多，实际本不该拥有的东西，让我有了更多的念头，也有了更多的失望。</p><p>昨晚看了一个小蓝的漫画故事，看到回来和记住过去，你只能选择其一。好像我对未来过于失望，对过去也没什么兴奋的想法了。我前些天认真考虑放弃保研去就业，也付出了实际行动。想着一点改变，倒也能激起我心中的兴趣。甚至前两天想，要不就延毕吧，不用找学院放弃，也不用将就找一份工作。延毕本身很刺激我。</p><p>我突然发现，这些疯疯癫癫的想法，真的激起了我的行动力和兴致。是不是当一个疯子，就开开心心啦。好多事、好多话，我常想太多而不敢做、不敢讲。但事情发展后，其实不如早做、早讲。</p><p>这一年，真的没有什么刺激的。之前看到文章说，焦虑和压力的一个原因是你会想在这个时间必须做什么。但不想必须做什么，对我来说，真的没有行动力了。</p><p>昨天深夜，不由得有点想哭，没敢看旁边的阳台，因为一个念头是：「好没意思，跳下去好了。」大一有次聚会，提前离场的我在凉亭，和一个朋友讲，我找不到意义。后来有夜晚到泮池旁趴草地上哭，也有半夜在陌生的街上漫步了几个小时，兜兜转转竟然又准确地回来了。想起这几个画面，心中泛酸，但也实在记不清具体的感情了。前几天翻到了前年十月写的一封生日祝福信，那是个多理想主义的人，以为一切问题都不是问题，以为未来一片光明，以为理想也许不只是理想。我没敢细看，也羞愧，这封信的作者和我简直是两个人。</p><p>我不快乐也不至于伤心，就好像在泥潭里不上不下。「如果有一天，你发现我向生活低了头，那么请向我开炮」我甚至好像不怎么看得到生活。</p><p>我能做点什么自认为有意义且开心的呢。之前会刷CF和力扣，觉得分数能带给我快乐，但这份快乐更该属于集训队的那段时光，不太属于现在。借了朋友的吉他，练了几次就烦了，想着写个项目自动帮我按和弦吧，这个又仅仅成为了一个想法。年初自己常去踢球，发现和身边朋友的差距变得太大了，经常不敢又自卑。最可怕的一件事，是我又开始抱怨，不断地抱怨，身上散漫了负面因子。</p><p>关于未来和没有新故事的一整年，该不会变成关于过去和没有新故事的未来吧。</p><p>今天看微博，看到有人很酷的在校期间跑遍了半个中国，做了很多想做的事情，可以去看星星，可以去创业，可以想做什么做什么。那我是不是也可以，去看星星，去做一些挑战的事情呀。我觉得做底层很酷，那我是不是可以去尝试呀，github上发布自己的项目或参与别人的开源项目，似乎也是一件很有意思的事情。这是一件很酷的事情，仅此而已。</p><p>我能往这个方向发展吗？问问自己。</p><p>手机里还存着一张截图，内容是人的生活要有主线和无数个支线。我分不清。如果说主线是生活的支柱，我以前可能认为它是一份好的工作事业、是你连结的亲密关系和日常生活，现在想，它一定得是很有趣的事情，能让你很愿意地去做，顺便解决一些如金钱这样的问题。那么另一个很有名的疑问来了，「站着，还想把钱挣了？」</p><p>先这样吧，不想继续说和写，想已经够累了。</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>感想等</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>巫师3 一段故事的结束</title>
     <link href="/2022/04/12/220412%E5%B7%AB%E5%B8%883%20%E4%B8%80%E6%AE%B5%E6%95%85%E4%BA%8B%E7%9A%84%E7%BB%93%E6%9D%9F/"/>
     <url>/2022/04/12/220412%E5%B7%AB%E5%B8%883%20%E4%B8%80%E6%AE%B5%E6%95%85%E4%BA%8B%E7%9A%84%E7%BB%93%E6%9D%9F/</url>
@@ -204,82 +147,6 @@
     <categories>
       
       <category>感想等</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>三傻大闹宝莱坞 如何选择</title>
-    <link href="/2021/12/21/211221%E4%B8%89%E5%82%BB%E5%A4%A7%E9%97%B9%E5%AE%9D%E8%8E%B1%E5%9D%9E%20%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9/"/>
-    <url>/2021/12/21/211221%E4%B8%89%E5%82%BB%E5%A4%A7%E9%97%B9%E5%AE%9D%E8%8E%B1%E5%9D%9E%20%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9/</url>
-    
-    <content type="html"><![CDATA[<p>如何选择</p><span id="more"></span><p>又开始焦虑本校读研，不如直接就业，自己做了最烂的选择，无法说服自己。重新看这部电影，觉得首先要保持积极开心啊，再勇敢地好好去做自己喜欢的事情。想起来法罕在家中和父亲的对话。“等几年后你的朋友都买房买车，你会恨自己的。 “我宁愿恨自己”。其实这段对话，让我想起来我和家人解释为何不读研，对话的父母对应着现在，而对话的法罕对应着我之前。其实还觉得直接就业是个很好的选择，读本校真的不是很好的选择，尤其在于我没敢全力地考研，去到更好的学校。但到如今，我也没勇气去就业。</p><p>首先积极开心，然后寻找自己所爱，多加思考，希望在有限的环境中活得更好，这是最大的空话。往最向往的地方，跳一跳，多看书看电影。</p><p>而且有一点，我更多只看到眼前的利益，对于长远点的规划很难有比较好的把控，常常期待短期的收益，在本科四年长跑中，并没有很好的下一步规划，比如在ACM竞赛中，就没有很仔细规划之后，在保研的安排中没有提前做好之后的铺垫准备。这是我作为一个人的缺点，和环境没有关系。（也许有关系）要改良自己呀。</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>感想等</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>电影与书</title>
-    <link href="/2021/07/23/210723%E7%94%B5%E5%BD%B1%E4%B8%8E%E4%B9%A6/"/>
-    <url>/2021/07/23/210723%E7%94%B5%E5%BD%B1%E4%B8%8E%E4%B9%A6/</url>
-    
-    <content type="html"><![CDATA[<p>高中起，喜欢看书，大二起，喜欢看电影。想简单记录下最近开始的情况，偶尔继续更新。</p><span id="more"></span><h1 id="书"><a href="#书" class="headerlink" title="书"></a>书</h1><p>已读：《沧浪之水》，《浮生六记》、《漫长的告别》、《长眠不醒》、战起1938、我的第三帝国、上海堡垒、《一封陌生女人的来信》、《流浪地球》、《了不起的盖茨比》</p><p>想读：《月亮与六便士》、《我与地坛》、《少有人走的路》、《人生海海》、《杀死一只知更鸟》</p><h1 id="电影"><a href="#电影" class="headerlink" title="电影"></a>电影</h1><p>已看：《1917》、《银河补习班》、《悬崖之上》、《送你一朵小红花》、《寂静之地2》、《速度与激情1+2+4+5+7》、《哈尔的移动城堡》、《天空之城》、《中国医生》、《战狼1+2》、《长津湖》、《扬名立万》、《人潮汹涌》、《你的名字》、《越过寒冬拥抱你》、《秒速五厘米》、《后会无期》、《雄狮少年》、《精英部队1+2》、《复仇者联盟3》、《X特遣队》、《利刃出鞘》、《绿皮书》、《刺杀小说家》、《三傻大闹宝莱坞》、《猫鼠游戏》、《这个杀手不太冷静》、《长津湖水门桥》、《守岛人》、《无间道1+2+3》、《环太平洋1+2》、《死亡诗社》、《让子弹飞》、《星空》、《横空出世》、《白日梦想家》、《史密斯夫妇》、《生化危机》、《烈日灼心》、《狙击手》、《绝命海拔》、《2012》、《奇迹 笨小孩》、《星际穿越》、《阿甘正传》、《了不起的盖茨比》、《后天》、《美丽心灵》、《国产凌凌漆》、《英雄本色1+2+3》、《人生大事》、《失控玩家》、《爱情与灵药》、《流浪地球2》</p><p>想看：</p><h1 id="剧"><a href="#剧" class="headerlink" title="剧"></a>剧</h1><p>《无心法师》、《觉醒年代》、《大决战》、《余罪1+2》、《双城之战》、《足球教练 1+2》、《猎罪图鉴》、《隐秘的角落》、《开端》、《去他妈的世界 1+2》、《纸牌屋》、《非自然死亡》、《猎罪图鉴》、《硅谷 1~6》、《沉默的真相》、《夏目友人帐》、</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>感想等</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>C/C++编译过程</title>
-    <link href="/2021/04/21/210421C++%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/"/>
-    <url>/2021/04/21/210421C++%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/</url>
-    
-    <content type="html"><![CDATA[<p>本科毕设需要C++项目，顺便重温下C++编译过程</p><span id="more"></span><h2 id="C-x2F-C-编译过程"><a href="#C-x2F-C-编译过程" class="headerlink" title="C&#x2F;C++编译过程"></a>C&#x2F;C++编译过程</h2><p>C&#x2F;C++文件-&gt;可执行文件：预处理、编译、汇编、链接</p><p>预处理（-E）：主要处理include、define等，插入头文件、替换定义宏</p><p>编译（-S）：生成汇编文件。</p><p>汇编（-c）：翻译成二进制机器指令文件</p><p>链接（-o）：链接函数库</p><h2 id="C-静态库和动态库"><a href="#C-静态库和动态库" class="headerlink" title="C++静态库和动态库"></a>C++静态库和动态库</h2><p>库的本质是二进制可执行文件，函数库一般分为静态库(.a、.lib)和动态库(.so、.dll)</p><ul><li>静态库在编译时被载入。静态链接将汇编生成的.o目标文件和库一起链接打包到可执行文件。一个静态库可以简单看作目标文件(.o&#x2F;.obj)的集合。<ul><li>特点：移植方便（运行时和函数库无关）、浪费空间和资源（被多次使用则需要在内存里有多份拷贝）、全量更新（某静态库更新会导致所有包含它的文件重新编译、发布）。</li><li>命名规则：lib[lib_name].a，lib为前缀</li></ul></li><li>动态库在运行时被载入。不同程序调用相同的库时，内存中只需要一份实例共享，解决空间浪费问题。更新时也避免全量更新问题，做到增量更新<ul><li>特点：实现进程之间资源共享（动态库又称资源库）、使一些程序升级简单、可以做到链接载入由程序代码中控制（<strong>显示调用</strong>）。</li><li>命名规则：lib[lib_name].so，lib为前缀。<ul><li>针对实际库文件，每个共享库有个特殊名字soname。程序启动后，程序通过这个名字告诉动态加载器载入哪个共享库。</li><li>文件系统中，soname仅是链接到实际动态库的链接。动态库实际有另一个名字给编译器使用。它是一个指向实际库镜像文件的链接文件（lib[soname].so）。</li></ul></li><li><strong>动态库的显示调用</strong><ul><li>C语言中很容易调用，Linux下dlfcn.h提供了接口，Windows则需要LoadLibrary、GetProcAddress、FreeLibrary等。</li><li>C++复杂，一是C++的<a href="https://zh.wikipedia.org/wiki/%E5%90%8D%E5%AD%97%E4%BF%AE%E9%A5%B0">name mangling</a>，二是没有合适的API来加载类。C++中可能用到库中的类，但需要创建类的实例，不容易。name mangling通过extern “C”解决，从动态库中获取类（不建议）见参考文章[2]、[3]。</li><li>使用C++动态库中的class非常繁琐和危险，因此能隐式不显式，能静态不动态。</li></ul></li></ul></li><li>二者不同点在于代码被载入的时刻不同，动态库因为<a href="https://zh.wikipedia.org/wiki/DLL%E5%9C%B0%E7%8D%84">DLL Hell</a> 问题要注意动态库管理问题。Java中在不经过封装的情况下只能直接使用动态库。</li></ul><h2 id="Linux库相关命令"><a href="#Linux库相关命令" class="headerlink" title="Linux库相关命令"></a>Linux库相关命令</h2><h3 id="nm命令：查看库中包含函数"><a href="#nm命令：查看库中包含函数" class="headerlink" title="nm命令：查看库中包含函数"></a>nm命令：查看库中包含函数</h3><p><strong>nm</strong>命令可以打印出库中的涉及到的所有符号。库既可以是静态的也可以是动态的。nm列出的符号有很多，常见的有三种：</p><ul><li><p>一种是在库中被调用，但并没有在库中定义(表明需要其他库支持)，用U表示；</p></li><li><p>一种是库中定义的函数，用T表示，这是最常见的；</p></li><li><p>一种是所谓的弱态”符号，它们虽然在库中被定义，但是可能被其他库中的同名符号覆盖，用W表示。</p></li></ul><h3 id="ldd命令：查看可执行程序依赖的共享库"><a href="#ldd命令：查看可执行程序依赖的共享库" class="headerlink" title="ldd命令：查看可执行程序依赖的共享库"></a>ldd命令：查看可执行程序依赖的共享库</h3><h2 id="参考文章："><a href="#参考文章：" class="headerlink" title="参考文章："></a>参考文章：</h2><p>[1] C++静态库与动态库：<a href="https://www.cnblogs.com/skynet/p/3372855.html">https://www.cnblogs.com/skynet/p/3372855.html</a></p><p>[2] LoadLibrary调用DLL中的Class：<a href="http://www.cppblog.com/codejie/archive/2009/09/24/97141.html">http://www.cppblog.com/codejie/archive/2009/09/24/97141.html</a></p><p>[3] C++ dlopen mini HOWTO：<a href="http://blog.csdn.net/denny_233/article/details/7255673">http://blog.csdn.net/denny_233/article/details/7255673</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>技术</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Make和Makefile</title>
-    <link href="/2021/04/21/210421make%E5%92%8Cmakefile/"/>
-    <url>/2021/04/21/210421make%E5%92%8Cmakefile/</url>
-    
-    <content type="html"><![CDATA[<p>同样是本科毕设需要，学一下Make</p><span id="more"></span><h2 id="Make和Makefile"><a href="#Make和Makefile" class="headerlink" title="Make和Makefile"></a>Make和Makefile</h2><p>Make，一般指GNU Make，用于完成自动化编译的工具。Makefile文件为Make指明编译规则。</p><p>Makefile描述整个工程的编译链接规则，基本规则为：</p><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">TARGET...: DEPENDENCIES...</span><br>COMMAND<br>...<br></code></pre></td></tr></table></figure><ul><li>TARGET：目标程序产生文件，如可执行文件、目标文件。目标也可以是clean等要执行的动作。</li><li>DEPENDENCIES：用来产生目标的输入文件列表，一个目标常依赖多个文件。</li><li>COMMAND：shell命令或shell下执行的程序，make执行的动作，每个命令行起始字符必须为TAB。</li></ul><p>如果DEPENDENCIES中有文件更新，COMMAND就会执行。make命令回味每个TAB开始的命令创建一个Shell进程去执行。</p><h2 id="DEMO"><a href="#DEMO" class="headerlink" title="DEMO"></a>DEMO</h2><p>目前有三个文件main.c、A.c、B.c，main依赖A和B。</p><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">main: main.o A.o B.o</span><br>gcc -o main main.o A.o B.o<br><span class="hljs-section">main.o: main.c</span><br>gcc -c main.c<br><span class="hljs-section">A.o: A.c</span><br>gcc -c A.c<br><span class="hljs-section">B.o: B.c</span><br>gcc -c B.c<br><span class="hljs-section">clean:</span><br>rm *.o<br>rm main<br></code></pre></td></tr></table></figure><p>首先使用make，此后若更改了A.c或B.c，重新执行make时会检查最后更改时间，只重新编译更改的文件。make clean清空编译文件。</p><h2 id="Makefile变量"><a href="#Makefile变量" class="headerlink" title="Makefile变量"></a>Makefile变量</h2><h2 id="Makefile伪目标"><a href="#Makefile伪目标" class="headerlink" title="Makefile伪目标"></a>Makefile伪目标</h2><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] make工具和Makefile的使用： <a href="https://blog.csdn.net/FRS2023/article/details/120839849">https://blog.csdn.net/FRS2023/article/details/120839849</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>技术</category>
       
     </categories>
     
